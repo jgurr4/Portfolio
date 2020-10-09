@@ -1,0 +1,15 @@
+:root {
+    --primary: darkslategrey;
+    --secondary: black;
+    --text2: white;
+}
+
+html {
+    background-color: var(--primary);
+    color: var(--text2);
+}
+
+body {
+    margin: 100px;
+    background-color: var(--secondary);
+}
