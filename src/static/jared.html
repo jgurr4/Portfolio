@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine|Roboto">
+    <script src="https://kit.fontawesome.com/6f406d946e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="menu">
+    <span>&#9728;</span>
+    <div id="content">
+        <button>About me</button>
+        <button>Qualifications</button>
+        <button>Contact</button>
+        <button>Portfolio</button>
+    </div>
+</div>
+<!--
+This needs to have some css applied so that it is placed in circle/oval
+and it needs to be on the right upper quadrant of the page. Change size of base image if needed.
+Replace with a different photo.
+-->
+<img src="./images/profilePic.jpg">
+<!--This will be in top-left. It never changes. Left of each <p> there will be a small symbol
+representing email, phone, location.-->
+<div id="top-section">
+    <h3 id="hello">Hello I'm</h3>
+    <h1>Jared Gurr</h1>
+    <h3>Backend Web Developer</h3>
+    <p><i class="far fa-envelope"></i>   jared@gurrfamily.com</p>
+    <p><i class="fas fa-phone"></i>   +1 480 283 5152</p>
+    <p><i class="fas fa-map-marker-alt"></i>   27, San Tan Valley, Arizona, United States</p>
+    <!--Here will be the github and linkedin clickable buttons.-->
+    <a href="#" class="fa fa-linkedin"></a>
+    <a href="#" class="fa fa-github"></a>
+</div>
+
+<!--This is default in bottom-right corner when user opens page,
+it will change with clickable buttons in left menu-->
+<div id="about">
+    <h3>About Me</h3>
+    <h4>I am currently working as a independent contractor doing backend web development. I have built several
+        websites and apps which utilize my skills with database connectors for database technologies such as
+        Mariadb/MySQL and Couchbase. I have also acquired skill with: </h4>
+    <button value="html/css">HTML/CSS</button>
+    <button value="JavaScript">JavaScript</button>
+    <button value="Node.js">Node.js</button>
+    <button value="Java">Java</button>
+    <button value="Vertx">Vertx</button>
+    <button value="RXJava2">RXJava2</button>
+    <button value="Docker">Docker</button>
+    <button value="Linux">Linux</button>
+    <button value="BASH">BASH</button>
+    <button value="VIM">VIM</button>
+    <button value="Git">Git</button>
+
+    <p>Click a button to see it's description and external links on left side.</p>
+
+    <button value="Download CV">Download CV <i class="fa fa-download"></i></button>
+</div>
+
+<!--
+This will be in bottom left. It never changes. It is the programming clipart.
+    <img href="/path/to/image">
+    Alternatively I can replace this with my tech stack with clickable arrow keys that change the
+    image and show a different description.
+-->
+<div id="tech">
+    <h4>Based on the path I'm pursuing, I have built a skill-set in these technologies:</h4>
+    <li>Linux/Ubuntu/Alpine/RancherOS (My workstation OS is Pop!_OS)</li>
+    <li>BASH (Bourn-Again Shell, used for Scripts and System Administration)</li>
+    <li>VIM (My Text-Editor of choice.)</li>
+    <li>Docker/Docker-compose (Containerization tech)</li>
+    <li>Git (For version-control of my projects)</li>
+    <li>Intellij IDEA (My preferred Java IDE)</li>
+    <li>HTML5/CSS3 (For front-end web)</li>
+    <li>JavaScript/JQuery (For front-end web scripting/DOM manipulation)</li>
+    <li>NodeJs (Server Environment & Mariadb connector)</li>
+    <li>MySQL/MariaDB (Server Database)</li>
+    <li>Java (My Preferred Backend Web Language)</li>
+    <li>Vertx (Asynchronous Java API)</li>
+    <li>Reactor Core & rxJava2 (Reactive API's for Java)</li>
+    <li>Couchbase/N1QL (A no-sql server database alternative to Mariadb)</li>
+</div>
+
+<div id="qual">
+    <h3>Qualifications:</h3>
+    <li>2 years of experience developing web applications.</li>
+    <li>Mostly self-taught aside from some mentorship.</li>
+    <li>1 year of college</li>
+    <li>Deep understanding of computers and hardware. Built several powerful pc's from scratch for people.</li>
+    <li>Java Certified from Oracle</li>
+    <li>Eagerness and willing to learn new things. Continuous education is my goal.</li>
+</div>
+
+<div id="contact">
+    <form>
+        <input type="text" placeholder="name">
+        <input type="text" placeholder="business">
+        <input type="text" placeholder="position you're hiring for">
+        <input type="text" placeholder="When it's appropriate for me to call you back">
+        <input type="text" placeholder="phone number">
+        <input type="text" placeholder="(optional) day you want to do an interview.">
+    </form>
+</div>
+
+<div id="port">
+    <h3>Here is a list of my projects with many more on the way:</h3>
+    <li><a href="http://lawnarizonablog.com">http://lawnarizonablog.com</a></li>
+    <p>This was my very first project I ever did. Built with Node.js and Mariadb connector. </p>
+    <p>Goal was to develop skill with Database Integration to web apps.</p>
+    <li><a href="http://arizonapomeranians.com">http://arizonapomeranians.com</a></li>
+    <p>This was my second project, client had an old webpage they wanted me to replace with a more modern one.
+        but still keep the appealing parts of it.</p>
+    <p>Here I got to practice my skill with JS-DOM manipulation for the pictures.</p>
+    <li>CrawlWebpage:</li>
+    <p>This is currently my most ambitious project. It is still a work in progress and it's a group effort
+        of me and two other developers.</p>
+    <p>It's basically a video game you play in your browser based on the online game "Dungeon Crawl Stone Soup".</p>
+    <p>The reason I liked working on this project so much is it deepened my understanding of Java programming
+        on the backend with JavaScript on the front end, and use of Model-View-Controller concepts as well as
+        reactive programming with Vertx, Web Routing and finally I learned standard practices that businesses
+        such as American Express use for Couchbase and N1QL on this project.</p>
+</div>
+
+</body>
+<footer>
+    <p>This webpage was built with Java/Vertx and HTML/CSS/JS/Jquery. It also uses Mysql Database.</p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        $("#menu").click(function () {
+            let content = $("dropdownContent");
+            content.attr("display", "block");
+        })
+    })
+    //    function replaceLb(id) {
+    //        let section = document.getElementById("rb")
+    //        let replacement = document.getElementById("" + id)
+    //        section.parentNode.replaceChild(section, replacement)
+    //    }
+    //
+    //    const menuButton = document.getElementById("menu")
+    //    const content = document.getElementById("dropdownContent")
+    //    menuButton.onclick = function () { dropdown() }
+    //
+    //    function dropdown() {
+    //        if (content.getAttribute("display") === "none") {
+    //            content.setAttribute("display", "block")
+    //        } else {
+    //            content.setAttribute("display", "none")
+    //        }
+    //    }
+
+</script>
+</html>
