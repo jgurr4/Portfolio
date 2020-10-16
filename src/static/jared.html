@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine|Roboto">
     <script src="https://kit.fontawesome.com/6f406d946e.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -20,19 +19,21 @@ This needs to have some css applied so that it is placed in circle/oval
 and it needs to be on the right upper quadrant of the page. Change size of base image if needed.
 Replace with a different photo.
 -->
-<img src="./images/profilePic.jpg">
+<img id="profileImg" class="noSelect" src="./images/profilePic.jpg">
 <!--This will be in top-left. It never changes. Left of each <p> there will be a small symbol
 representing email, phone, location.-->
 <div id="top-section">
-    <h3 id="hello">Hello I'm</h3>
+    <h3 class="noSelect" id="hello">Hello I'm</h3>
     <h1>Jared Gurr</h1>
     <h3>Backend Web Developer</h3>
     <p><i class="far fa-envelope"></i> jared@gurrfamily.com</p>
     <p><i class="fas fa-phone"></i> +1 480 283 5152</p>
     <p><i class="fas fa-map-marker-alt"></i> 27, San Tan Valley, Arizona, United States</p>
     <!--Here will be the github and linkedin clickable buttons.-->
-    <a target="_blank" href="https://linkedin.com/in/jared-gurr-173008b7" class="fa fa-linkedin"></a>
-    <a target="_blank" href="https://github.com/jgurr4/Portfolio" class="fa fa-github"></a>
+    <div class="noSelect">
+        <a target="_blank" href="https://linkedin.com/in/jared-gurr-173008b7" class="fa fa-linkedin"></a>
+        <a target="_blank" href="https://github.com/jgurr4/Portfolio" class="fa fa-github"></a>
+    </div>
 </div>
 
 <!--This is default in bottom-right corner when user opens page,
@@ -42,29 +43,65 @@ it will change with clickable buttons in left menu-->
     <h4>I am currently working as a independent contractor doing backend web development. I have built several
         websites and apps which utilize my skills with database connectors for database technologies such as
         Mariadb/MySQL and Couchbase. I have also acquired skill with: </h4>
-    <button class="noSelect" value="html/css">HTML/CSS</button>
-    <button class="noSelect" value="JavaScript">JavaScript</button>
-    <button class="noSelect" value="Node.js">Node.js</button>
-    <button class="noSelect" value="Java">Java</button>
-    <button class="noSelect" value="Vertx">Vertx</button>
-    <button class="noSelect" value="RXJava2">RXJava2</button>
-    <button class="noSelect" value="Docker">Docker</button>
-    <button class="noSelect" value="Linux">Linux</button>
-    <button class="noSelect" value="BASH">BASH</button>
-    <button class="noSelect" value="VIM">VIM</button>
-    <button class="noSelect" value="Git">Git</button>
+
+    <div id="buttons" class="noSelect">
+        <button onclick="switchImg(this.value)" class="techBtn" value="html">HTML/CSS</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="js">JavaScript</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="node">Node.js</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="java">Java</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="vertx">Vertx</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="rxjava">RXJava2</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="docker">Docker</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="linux">Linux</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="bash">BASH</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="vim">VIM</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="git">Git</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="couchbase">Couchbase</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="intel">Intellij</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="mysql">MySQL</button>
+    </div>
 
     <p>Click a button to see it's description and external links on left side.</p>
 
     <button class="noSelect" value="Download CV">Download CV <i class="fa fa-download"></i></button>
 </div>
 
-<!--
-This will be in bottom left. It never changes. It is the programming clipart.
-    <img href="/path/to/image">
-    Alternatively I can replace this with my tech stack with clickable arrow keys that change the
-    image and show a different description.
--->
+<div class="noSelect">
+    <img id="bash" class="techImg" src="images/BASH.png">
+    <img id="couchbase" class="hideImg" src="images/Couchbase.png">
+    <img id="docker" class="hideImg" src="images/docker.png">
+    <img id="git" class="hideImg" src="images/github.png">
+    <img id="html" class="hideImg" src="images/HTML+CSS.png">
+    <img id="intel" class="hideImg" src="images/Intellij.jpeg">
+    <img id="java" class="hideImg" src="images/Java.png">
+    <img id="js" class="hideImg" src="images/JavaScript.png">
+    <img id="linux" class="hideImg" src="images/Linux.png">
+    <img id="mysql" class="hideImg" src="images/MySQL.png">
+    <img id="node" class="hideImg" src="images/Nodejs.png">
+    <img id="rxjava" class="hideImg" src="images/rxJava.png">
+    <img id="vertx" class="hideImg" src="images/Vertx.png">
+    <img id="vim" class="hideImg" src="images/VIM.png">
+</div>
+
+<div>
+    <p id="bashd" class="techDesc">(Bourne-Again Shell is a shell with powerful scripting capabilities and regex searches.
+        I use it for automating scripts for MySQL/Couchbase queries, deploying Docker containers, and executing Github
+        updates.)</p>
+    <p id="couchbased" class="hideDesc">Couchbase stuff here.</p>
+    <p id="dockerd" class="hideDesc">Docker stuff here.</p>
+    <p id="gitd" class="hideDesc">Git stuff here.</p>
+    <p id="htmld" class="hideDesc">Html/CSS stuff here.</p>
+    <p id="inteld" class="hideDesc">Intellij IDEA stuff here.</p>
+    <p id="javad" class="hideDesc">Java stuff here.</p>
+    <p id="jsd" class="hideDesc">JavaScript stuff here.</p>
+    <p id="linuxd" class="hideDesc">Linux stuff here.</p>
+    <p id="mysqld" class="hideDesc">MariaDB/MySQL stuff here.</p>
+    <p id="noded" class="hideDesc">Node.js stuff here.</p>
+    <p id="rxjavad" class="hideDesc">RXJava2 stuff here.</p>
+    <p id="vertxd" class="hideDesc">Vertx stuff here.</p>
+    <p id="vimd" class="hideDesc">VIM stuff here.</p>
+</div>
+
 <div id="tech">
     <h4>Based on the path I'm pursuing, I have built a skill-set in these technologies:</h4>
     <li>Linux/Ubuntu/Alpine/RancherOS (My workstation OS is Pop!_OS)</li>
@@ -129,6 +166,7 @@ This will be in bottom left. It never changes. It is the programming clipart.
 </footer>
 
 <script>
+    //window.onload  //This needs to be somehow used before or wrapped around code.
     const menuButton = document.querySelector("#menu")
     const content = document.querySelector("#content")
     menuButton.onclick = function () {
@@ -141,6 +179,20 @@ This will be in bottom left. It never changes. It is the programming clipart.
         } else {
             content.style.display = "none"
         }
+    }
+
+    let currentImg = document.querySelector(".techImg")
+    let currentDesc = document.querySelector(".techDesc")
+
+    function switchImg(id) {
+        currentImg.setAttribute("class", "hideImg")
+        currentDesc.setAttribute("class", "hideDesc")
+        let newImg = document.getElementById(id)
+        let newDesc = document.getElementById(id + "d")
+        newImg.setAttribute("class", "techImg");
+        newDesc.setAttribute("class", "techDesc")
+        currentImg = document.querySelector(".techImg")
+        currentDesc = document.querySelector(".techDesc")
     }
 </script>
 

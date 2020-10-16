@@ -5,10 +5,14 @@
     --text: white;
 }
 
-html {
+body {
     height: 95vh;
     background-color: var(--1);
     color: var(--text);
+}
+
+::selection {
+    background: deepskyblue;
 }
 
 #hello {
@@ -30,8 +34,6 @@ The body and other elements inside it have to be automatically adjusted
 for smaller screens. The goal is that no matter how small or big the screen is
 the page will get small enough so that scrolling will not happen or be needed.
 */
-body {
-}
 
 .noSelect {
     -webkit-touch-callout: none; /* iOS Safari */
@@ -53,7 +55,7 @@ button:hover, span:hover {
 #content {
 }
 
-img {
+#profileImg {
     height: 20em;
     width: 20em;
     position: absolute;
@@ -72,6 +74,27 @@ img {
     position: absolute;
     bottom: 12vw;
     left: 50vw;
+}
+
+.techImg {
+    position: absolute;
+    bottom: 10vw;
+    left: 25vw;
+    width: 250px;
+}
+
+.hideImg {
+    display: none;
+}
+
+.techDesc {
+    position: absolute;
+    bottom: 7vw;
+    left: 7vw;
+}
+
+.hideDesc {
+    display: none;
 }
 
 footer {
