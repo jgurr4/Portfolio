@@ -33,8 +33,24 @@ the page will get small enough so that scrolling will not happen or be needed.
 body {
 }
 
+.noSelect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+button:focus {
+   outline: none;
+}
+
+button:hover, span:hover {
+    cursor: pointer;
+}
+
 #content {
-    display: none;
 }
 
 img {
@@ -69,7 +85,7 @@ footer {
     padding-right: .3vw;
 }
 
-span {
+#menu {
     font-size:70px;
     color:var(--text);
 }

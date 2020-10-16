@@ -8,14 +8,12 @@
     <script src="https://kit.fontawesome.com/6f406d946e.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div id="menu">
-    <span>&#9728;</span>
-    <div id="content">
-        <button>About me</button>
-        <button>Qualifications</button>
-        <button>Contact</button>
-        <button>Portfolio</button>
-    </div>
+<span id="menu" class="noSelect">&#9728;</span>
+<div id="content" style="display: none;">
+    <button class="noSelect">About me</button>
+    <button class="noSelect">Qualifications</button>
+    <button class="noSelect">Contact</button>
+    <button class="noSelect">Portfolio</button>
 </div>
 <!--
 This needs to have some css applied so that it is placed in circle/oval
@@ -29,12 +27,12 @@ representing email, phone, location.-->
     <h3 id="hello">Hello I'm</h3>
     <h1>Jared Gurr</h1>
     <h3>Backend Web Developer</h3>
-    <p><i class="far fa-envelope"></i>   jared@gurrfamily.com</p>
-    <p><i class="fas fa-phone"></i>   +1 480 283 5152</p>
-    <p><i class="fas fa-map-marker-alt"></i>   27, San Tan Valley, Arizona, United States</p>
+    <p><i class="far fa-envelope"></i> jared@gurrfamily.com</p>
+    <p><i class="fas fa-phone"></i> +1 480 283 5152</p>
+    <p><i class="fas fa-map-marker-alt"></i> 27, San Tan Valley, Arizona, United States</p>
     <!--Here will be the github and linkedin clickable buttons.-->
-    <a href="#" class="fa fa-linkedin"></a>
-    <a href="#" class="fa fa-github"></a>
+    <a target="_blank" href="https://linkedin.com/in/jared-gurr-173008b7" class="fa fa-linkedin"></a>
+    <a target="_blank" href="https://github.com/jgurr4/Portfolio" class="fa fa-github"></a>
 </div>
 
 <!--This is default in bottom-right corner when user opens page,
@@ -44,21 +42,21 @@ it will change with clickable buttons in left menu-->
     <h4>I am currently working as a independent contractor doing backend web development. I have built several
         websites and apps which utilize my skills with database connectors for database technologies such as
         Mariadb/MySQL and Couchbase. I have also acquired skill with: </h4>
-    <button value="html/css">HTML/CSS</button>
-    <button value="JavaScript">JavaScript</button>
-    <button value="Node.js">Node.js</button>
-    <button value="Java">Java</button>
-    <button value="Vertx">Vertx</button>
-    <button value="RXJava2">RXJava2</button>
-    <button value="Docker">Docker</button>
-    <button value="Linux">Linux</button>
-    <button value="BASH">BASH</button>
-    <button value="VIM">VIM</button>
-    <button value="Git">Git</button>
+    <button class="noSelect" value="html/css">HTML/CSS</button>
+    <button class="noSelect" value="JavaScript">JavaScript</button>
+    <button class="noSelect" value="Node.js">Node.js</button>
+    <button class="noSelect" value="Java">Java</button>
+    <button class="noSelect" value="Vertx">Vertx</button>
+    <button class="noSelect" value="RXJava2">RXJava2</button>
+    <button class="noSelect" value="Docker">Docker</button>
+    <button class="noSelect" value="Linux">Linux</button>
+    <button class="noSelect" value="BASH">BASH</button>
+    <button class="noSelect" value="VIM">VIM</button>
+    <button class="noSelect" value="Git">Git</button>
 
     <p>Click a button to see it's description and external links on left side.</p>
 
-    <button value="Download CV">Download CV <i class="fa fa-download"></i></button>
+    <button class="noSelect" value="Download CV">Download CV <i class="fa fa-download"></i></button>
 </div>
 
 <!--
@@ -127,34 +125,23 @@ This will be in bottom left. It never changes. It is the programming clipart.
 
 </body>
 <footer>
-    <p>This webpage was built with Java/Vertx and HTML/CSS/JS/Jquery. It also uses Mysql Database.</p>
+    <p>This webpage was built with Java/Vertx and HTML/CSS/JS. It also uses Mysql Database.</p>
 </footer>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"
-        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script>
-    $(document).ready(function () {
-        $("#menu").click(function () {
-            let content = $("dropdownContent");
-            content.attr("display", "block");
-        })
-    })
-    //    function replaceLb(id) {
-    //        let section = document.getElementById("rb")
-    //        let replacement = document.getElementById("" + id)
-    //        section.parentNode.replaceChild(section, replacement)
-    //    }
-    //
-    //    const menuButton = document.getElementById("menu")
-    //    const content = document.getElementById("dropdownContent")
-    //    menuButton.onclick = function () { dropdown() }
-    //
-    //    function dropdown() {
-    //        if (content.getAttribute("display") === "none") {
-    //            content.setAttribute("display", "block")
-    //        } else {
-    //            content.setAttribute("display", "none")
-    //        }
-    //    }
 
+<script>
+    const menuButton = document.querySelector("#menu")
+    const content = document.querySelector("#content")
+    menuButton.onclick = function () {
+        dropdown()
+    }
+
+    function dropdown() {
+        if (content.style.display === "none") {
+            content.style.display = "block"
+        } else {
+            content.style.display = "none"
+        }
+    }
 </script>
+
 </html>
