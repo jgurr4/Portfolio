@@ -8,11 +8,11 @@
 </head>
 <body>
 <span id="menu" class="noSelect">&#9728;</span>
-<div id="content" style="display: none;">
-    <button class="noSelect">About me</button>
-    <button class="noSelect">Qualifications</button>
-    <button class="noSelect">Contact</button>
-    <button class="noSelect">Portfolio</button>
+<div id="content" class="noSelect" style="display: none;">
+    <button onclick="replaceSection(this.value)" value="about">About me</button>
+    <button onclick="replaceSection(this.value)" value="qualifications">Qualifications</button>
+    <button onclick="replaceSection(this.value)" value="contact">Contact</button>
+    <button onclick="replaceSection(this.value)" value="portfolio">Portfolio</button>
 </div>
 <!--
 This needs to have some css applied so that it is placed in circle/oval
@@ -38,7 +38,7 @@ representing email, phone, location.-->
 
 <!--This is default in bottom-right corner when user opens page,
 it will change with clickable buttons in left menu-->
-<div id="about">
+<div id="about" class="section">
     <h3>About Me</h3>
     <h4>I am currently working as a independent contractor doing backend web development. I have built several
         websites and apps which utilize my skills with database connectors for database technologies such as
@@ -61,7 +61,7 @@ it will change with clickable buttons in left menu-->
         <button onclick="switchImg(this.value)" class="techBtn" value="mysql">MySQL</button>
     </div>
 
-    <p>Click a button to see it's description and external links on left side.</p>
+    <p>Click any button above to see it's description and external links on left side.</p>
 
     <a href="resume.pdf" download>
         <button class="noSelect" value="Download CV">Download CV <i class="fa fa-download"></i></button>
@@ -200,7 +200,7 @@ it will change with clickable buttons in left menu-->
         editors. Check out the webpage and you'll see more details explaining vim. All my programs are written in VIM.</p>
 </div>
 
-<div id="tech">
+<div id="tech" class="hideSection">
     <h4>Based on the path I'm pursuing, I have built a skill-set in these technologies:</h4>
     <li>Linux/Ubuntu/Alpine/RancherOS (My workstation OS is Pop!_OS)</li>
     <li>BASH (Bourn-Again Shell, used for Scripts and System Administration)</li>
@@ -218,7 +218,7 @@ it will change with clickable buttons in left menu-->
     <li>Couchbase/N1QL (A no-sql server database alternative to Mariadb)</li>
 </div>
 
-<div id="qual">
+<div id="qualifications" class="hideSection">
     <h3>Qualifications:</h3>
     <li>2 years of experience developing web applications.</li>
     <li>Mostly self-taught aside from some mentorship.</li>
@@ -228,7 +228,7 @@ it will change with clickable buttons in left menu-->
     <li>Eagerness and willing to learn new things. Continuous education is my goal.</li>
 </div>
 
-<div id="contact">
+<div id="contact" class="hideSection">
     <form>
         <input type="text" placeholder="name">
         <input type="text" placeholder="business">
@@ -239,7 +239,7 @@ it will change with clickable buttons in left menu-->
     </form>
 </div>
 
-<div id="port">
+<div id="portfolio" class="hideSection">
     <h3>Here is a list of my projects with many more on the way:</h3>
     <li><a href="http://lawnarizonablog.com">http://lawnarizonablog.com</a></li>
     <p>This was my very first project I ever did. Built with Node.js and Mariadb connector. </p>
@@ -291,6 +291,14 @@ it will change with clickable buttons in left menu-->
         newDesc.setAttribute("class", "techDesc")
         currentImg = document.querySelector(".techImg")
         currentDesc = document.querySelector(".techDesc")
+    }
+
+    let currentSec = document.querySelector(".section")
+    function replaceSection(id) {
+        currentSec.setAttribute("class", "hideSection")
+        let newSec = document.getElementById(id)
+        newSec.setAttribute("class", "section")
+        currentSec = document.querySelector(".section")
     }
 </script>
 

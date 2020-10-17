@@ -70,10 +70,15 @@ button:hover, span:hover {
     left: 20vw;
 }
 
-#about {
+
+.section {
     position: absolute;
     bottom: 12vw;
     left: 50vw;
+}
+
+.hideSection {
+   display: none;
 }
 
 .techImg {
@@ -120,23 +125,6 @@ button {
     border-radius: 30px;
     border-color: var(--3);
     padding: 8px;
-}
-
-
-#tech {
-    display: none;
-}
-
-#qual {
-    display: none;
-}
-
-#contact {
-    display: none;
-}
-
-#port {
-    display: none;
 }
 
 li {
