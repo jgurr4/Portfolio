@@ -61,7 +61,7 @@ button:hover, span:hover {
     position: absolute;
     top: 6vw;
     right: 30vw;
-    border-radius: 50px;
+    border-radius: 50%;
 }
 
 #top-section {
@@ -79,7 +79,7 @@ button:hover, span:hover {
 .techImg {
     position: absolute;
     bottom: 10vw;
-    left: 25vw;
+    left: 22vw;
     width: 250px;
 }
 
@@ -89,8 +89,9 @@ button:hover, span:hover {
 
 .techDesc {
     position: absolute;
-    bottom: 7vw;
+    bottom: 4vw;
     left: 7vw;
+    margin-right: 900px;
 }
 
 .hideDesc {
