@@ -120,7 +120,7 @@ it will change with clickable buttons in left menu-->
                                       title="Click to see official site.">
         Bourne-Again Shell</a> is a shell with powerful scripting capabilities and regex
         searches. I use it for administration, automating scripts for MySQL/Couchbase queries, deploying Docker
-        containers, and Github push/pull updates.</p>
+        containers, Github push/pull updates, and many more System Administrator duties.</p>
     <p id="couchbased" class="hideDesc"><a href="https://docs.couchbase.com/home/server.html" target="_blank"
                                            title="Click to see official site.">
         Couchbase</a> is a NoSQL database which uses json Documents to store data.
@@ -146,8 +146,8 @@ it will change with clickable buttons in left menu-->
         know enough so that I could make my projects look good enough to post on the web.</p>
     <p id="inteld" class="hideDesc"><a href="https://www.jetbrains.com/idea/" target="_blank"
                                        title="Click to see official site.">
-        IntelliJ IDEA</a> is my preferred Java IDE. I used to use Eclipse, but found
-        that IntelliJ was more intuitive and required much less configuration than Eclipse did. Thanks to
+        IntelliJ IDEA</a> is my preferred Java IDE. I previously used Eclipse, but found
+        that IntelliJ was more intuitive and required less configuration than Eclipse did. Thanks to
         IntelliJ Ultimate my productivity has definitely increased substantially, but don't expect me to have
         any numbers to substantiate that claim. Suffice it to say, it at least feels like I am getting more done
         with it than I was with other IDE's.</p>
@@ -156,17 +156,17 @@ it will change with clickable buttons in left menu-->
         Java</a> as the main backend language of all my web applications. This is
         because Java as an Application language has much more power and features than something like JavaScript/Node.js.
         This is the reason I devoted more time to learning and mastering Java than I did to JavaScript. Combined
-        with Vert.x for asynchronicity, Java is a ideal programming language for handling all my web applications
-        backend code.</p>
+        with Vert.x for asynchronicity, Java is an ideal programming language for handling the backend code for all
+        my web applications.</p>
     <p id="jsd" class="hideDesc"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"
                                     title="Click to see official site.">
         JavaScript</a> is the first programming language I learned, and it's what I
-        use to manipulate the HTML DOM for apps that require it, and to communicate to Java Backend programs.</p>
+        use to manipulate the HTML DOM for apps that require it. Also to communicate to Java Backend programs.</p>
     <p id="linuxd" class="hideDesc">After I built my own PC, I decided to install both Windows and <a
             href="https://en.wikipedia.org/wiki/Linux" target="_blank" title="Click to see official site.">
         Linux</a> on it
         in a dual boot configuration. Within a short time, I found out I liked developing within Linux much more than
-        I did within Windows, so now I mostly use Linux for 100% of my programming. Right now my workstation OS
+        I did within Windows, so now I use Linux for 100% of my programming. Right now my workstation OS
         is Pop!_OS, which is based on Ubuntu. Beyond that, I also run my servers in RancherOS and use Alpine
         within that.</p>
     <p id="mysqld" class="hideDesc"><a href="https://mariadb.org/about/" target="_blank"
@@ -176,8 +176,9 @@ it will change with clickable buttons in left menu-->
         most.</p>
     <p id="noded" class="hideDesc"><a href="https://nodejs.org/en/about/" target="_blank"
                                       title="Click to see official site.">
-        Node.Js</a> is the program I learned to use simply because before I knew Java/Vertx
-        it was an effective and easy way to connect MySQL to my websites. NPM and Node.Js are technologies I am
+        Node.Js</a> is the program I learned to use before I knew Java/Vertx.
+        It was an effective and easy way to connect MySQL to my websites. Because of this NPM and Node.Js are
+        technologies I am
         very familiar with, and can use effectively.</p>
     <p id="rxjavad" class="hideDesc"><a href="https://github.com/ReactiveX/RxJava" target="_blank"
                                         title="Click to see official site.">
@@ -224,8 +225,8 @@ it will change with clickable buttons in left menu-->
 
 
 <div id="portfolio" class="hideSection">
-    <h3>Here is a list of my projects with many more on the way:</h3>
     <div id="portCont1" class="portCont">
+        <h3>Here is a list of my projects with many more on the way:</h3>
         <li><a href="http://lawnarizonablog.com">http://lawnarizonablog.com</a></li>
         <p>This was my very first project I ever did. Built with Node.js and Mariadb connector.
             The goal was to develop skill with Database Integration to web apps.</p>
@@ -233,24 +234,24 @@ it will change with clickable buttons in left menu-->
         <p>This was my second project, client had an old webpage they wanted me to replace with a more modern one.
             but still keep the appealing parts of it. Here I got to practice my skill with JS-DOM manipulation for the
             pictures.</p>
-        <div id="portCont2" class="hidePort">
-            <li>CrawlWebpage:</li>
-            <p>This is currently my most ambitious project. It is still a work in progress and it's a group effort
-                of me and two other developers.</p>
-            <p>It's basically a video game you play in your browser based on the online game "Dungeon Crawl Stone
-                Soup".</p>
-            <p>The reason I liked working on this project so much is it deepened my understanding of Java programming
-                with Vertx.
-                It also helped me learn how to create apps with Model-View-Controller concepts as well as
-                develop more skill with Web Routing, and finally I learned standard practices that businesses
-                such as American Express use for querying Couchbase with N1QL on this project.</p>
-        </div>
-        <div class="pagination">
-            <span id="leftArrow" class="arrows">&lt;</span>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <span id="rightArrow" class="arrows">&gt;</span>
-        </div>
+    </div>
+    <div id="portCont2" class="hidePort">
+        <li>CrawlWebpage:</li>
+        <p>This is currently my most ambitious project. It is still a work in progress and it's a group effort
+            of me and two other developers.</p>
+        <p>It's basically a video game you play in your browser based on the online game "Dungeon Crawl Stone
+            Soup".</p>
+        <p>The reason I liked working on this project so much is it deepened my understanding of Java programming
+            with Vertx.
+            It also helped me learn how to create apps with Model-View-Controller concepts as well as
+            develop more skill with Web Routing, and finally I learned standard practices that businesses
+            such as American Express use for querying Couchbase with N1QL on this project.</p>
+    </div>
+    <div class="pagination">
+        <span id="leftArrow" class="arrows" onclick="changePage(this.id)">&lt;</span>
+        <a href="#" id="1" class="active" onclick="changePage(this.id)">1</a>
+        <a href="#" id="2" class="inactive" onclick="changePage(this.id)">2</a>
+        <span id="rightArrow" class="arrows" onclick="changePage(this.id)">&gt;</span>
     </div>
 </div>
 
@@ -297,6 +298,33 @@ it will change with clickable buttons in left menu-->
         newSec.setAttribute("class", "section")
         currentSec = document.querySelector(".section")
     }
+
+    let currentPort = document.querySelector(".portCont")
+    let active = document.querySelector(".active")
+    let inactive = document.querySelector(".inactive")
+
+    function changePage(id) {
+        if (id === "1" || id === "2") {
+            active.setAttribute("class", "inactive")
+            inactive.setAttribute("class", "active")
+            let newPort = document.getElementById("portCont" + id)
+            currentPort.setAttribute("class", "hidePort")
+            newPort.setAttribute("class", "portCont")
+            currentPort = document.querySelector(".portCont")
+            active = document.querySelector(".active")
+            inactive = document.querySelector(".inactive")
+        } else {
+            active.setAttribute("class", "inactive")
+            inactive.setAttribute("class", "active")
+            let newPort = document.querySelector(".hidePort")
+            newPort.setAttribute("class", "portCont")
+            currentPort.setAttribute("class", "hidePort")
+            currentPort = document.querySelector(".portCont")
+            active = document.querySelector(".active")
+            inactive = document.querySelector(".inactive")
+        }
+    }
+
 </script>
 
 </html>
