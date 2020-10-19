@@ -157,13 +157,52 @@ a {
 }
 
 #portfolio {
-    bottom: 13vw;
+    bottom: 11vw;
 }
 
-#portCont1 {
+.portCont {
     margin-right: 300px;
 }
 
-#portCont2 {
+.hidePort {
     display: none;
+}
+
+span.arrows {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+#leftArrow {
+    float: left;
+    margin-right: 10px;
+}
+
+#rightArrow {
+    float: left;
+    margin-left: 10px;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+div.pagination {
+    position: relative;
+    top: 1vw;
+    left: 10vw;
 }

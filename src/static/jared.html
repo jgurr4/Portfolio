@@ -117,7 +117,7 @@ it will change with clickable buttons in left menu-->
 
 <div>
     <p id="bashd" class="techDesc"><a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)" target="_blank"
-                                       title="Click to see official site.">
+                                      title="Click to see official site.">
         Bourne-Again Shell</a> is a shell with powerful scripting capabilities and regex
         searches. I use it for administration, automating scripts for MySQL/Couchbase queries, deploying Docker
         containers, and Github push/pull updates.</p>
@@ -197,25 +197,8 @@ it will change with clickable buttons in left menu-->
         VIM</a>(Vi-Improved) is one of my all time favorite technologies I learned in the past
         few years. It is simply an editor, but it is so powerful and has so many capabilities, that any code
         or even simple text documents you write will be done in much less time than it takes in normal text
-        editors. Check out the webpage and you'll see more details explaining vim. All my programs are written in VIM.</p>
-</div>
-
-<div id="tech" class="hideSection">
-    <h4>Based on the path I'm pursuing, I have built a skill-set in these technologies:</h4>
-    <li>Linux/Ubuntu/Alpine/RancherOS (My workstation OS is Pop!_OS)</li>
-    <li>BASH (Bourn-Again Shell, used for Scripts and System Administration)</li>
-    <li>VIM (My Text-Editor of choice.)</li>
-    <li>Docker/Docker-compose (Containerization tech)</li>
-    <li>Git (For version-control of my projects)</li>
-    <li>Intellij IDEA (My preferred Java IDE)</li>
-    <li>HTML5/CSS3 (For front-end web)</li>
-    <li>JavaScript/JQuery (For front-end web scripting/DOM manipulation)</li>
-    <li>NodeJs (Server Environment & Mariadb connector)</li>
-    <li>MySQL/MariaDB (Server Database)</li>
-    <li>Java (My Preferred Backend Web Language)</li>
-    <li>Vertx (Asynchronous Java API)</li>
-    <li>Reactor Core & rxJava2 (Reactive API's for Java)</li>
-    <li>Couchbase/N1QL (A no-sql server database alternative to Mariadb)</li>
+        editors. Check out the webpage and you'll see more details explaining vim. All my programs are written in VIM.
+    </p>
 </div>
 
 <div id="qualifications" class="hideSection">
@@ -239,24 +222,34 @@ it will change with clickable buttons in left menu-->
     </form>
 </div>
 
+
 <div id="portfolio" class="hideSection">
     <h3>Here is a list of my projects with many more on the way:</h3>
-    <div id="portCont1">
-    <li><a href="http://lawnarizonablog.com">http://lawnarizonablog.com</a></li>
-    <p>This was my very first project I ever did. Built with Node.js and Mariadb connector.
-    The goal was to develop skill with Database Integration to web apps.</p>
-    <li><a href="http://arizonapomeranians.com">http://arizonapomeranians.com</a></li>
-    <p>This was my second project, client had an old webpage they wanted me to replace with a more modern one.
-        but still keep the appealing parts of it. Here I got to practice my skill with JS-DOM manipulation for the pictures.</p>
-        <div id="portCont2">
-    <li>CrawlWebpage:</li>
-    <p>This is currently my most ambitious project. It is still a work in progress and it's a group effort
-        of me and two other developers.</p>
-    <p>It's basically a video game you play in your browser based on the online game "Dungeon Crawl Stone Soup".</p>
-    <p>The reason I liked working on this project so much is it deepened my understanding of Java programming with Vertx.
-        It also helped me learn how to create apps with Model-View-Controller concepts as well as
-        develop more skill with Web Routing, and finally I learned standard practices that businesses
-        such as American Express use for querying Couchbase with N1QL on this project.</p>
+    <div id="portCont1" class="portCont">
+        <li><a href="http://lawnarizonablog.com">http://lawnarizonablog.com</a></li>
+        <p>This was my very first project I ever did. Built with Node.js and Mariadb connector.
+            The goal was to develop skill with Database Integration to web apps.</p>
+        <li><a href="http://arizonapomeranians.com">http://arizonapomeranians.com</a></li>
+        <p>This was my second project, client had an old webpage they wanted me to replace with a more modern one.
+            but still keep the appealing parts of it. Here I got to practice my skill with JS-DOM manipulation for the
+            pictures.</p>
+        <div id="portCont2" class="hidePort">
+            <li>CrawlWebpage:</li>
+            <p>This is currently my most ambitious project. It is still a work in progress and it's a group effort
+                of me and two other developers.</p>
+            <p>It's basically a video game you play in your browser based on the online game "Dungeon Crawl Stone
+                Soup".</p>
+            <p>The reason I liked working on this project so much is it deepened my understanding of Java programming
+                with Vertx.
+                It also helped me learn how to create apps with Model-View-Controller concepts as well as
+                develop more skill with Web Routing, and finally I learned standard practices that businesses
+                such as American Express use for querying Couchbase with N1QL on this project.</p>
+        </div>
+        <div class="pagination">
+            <span id="leftArrow" class="arrows">&lt;</span>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <span id="rightArrow" class="arrows">&gt;</span>
         </div>
     </div>
 </div>
@@ -297,6 +290,7 @@ it will change with clickable buttons in left menu-->
     }
 
     let currentSec = document.querySelector(".section")
+
     function replaceSection(id) {
         currentSec.setAttribute("class", "hideSection")
         let newSec = document.getElementById(id)
