@@ -213,13 +213,14 @@ it will change with clickable buttons in left menu-->
 </div>
 
 <div id="contact" class="hideSection">
-    <form>
+    <form class="noSelect" method="post" action="/api/contact" onsubmit="alert('Your message has been sent. I will respond to you as soon as possible. Thank you!')">
         <input type="text" placeholder="name">
         <input type="text" placeholder="business">
         <input type="text" placeholder="position you're hiring for">
         <input type="text" placeholder="When it's appropriate for me to call you back">
         <input type="text" placeholder="phone number">
         <input type="text" placeholder="(optional) day you want to do an interview.">
+        <button type="submi" value="Submit">Submit</button>
     </form>
 </div>
 

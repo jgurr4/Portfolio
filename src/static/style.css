@@ -44,7 +44,7 @@ the page will get small enough so that scrolling will not happen or be needed.
     user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
-button:focus {
+button:focus, input:focus {
     outline: none;
 }
 
@@ -154,6 +154,25 @@ li {
 
 a {
     color: antiquewhite;
+}
+
+#contact {
+    margin: 0px 200px 0px 100px;
+    width: 200px;
+    bottom: 9vw;
+}
+
+#contact input {
+    padding: 5px;
+    margin: 10px;
+    width: 250px;
+    border-radius: 40px;
+}
+
+#contact button {
+    width: 50%;
+    margin-left: 85px;
+    margin-top: 5px;
 }
 
 #portfolio {
