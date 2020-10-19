@@ -45,7 +45,7 @@ the page will get small enough so that scrolling will not happen or be needed.
 }
 
 button:focus {
-   outline: none;
+    outline: none;
 }
 
 button:hover, span:hover {
@@ -53,6 +53,25 @@ button:hover, span:hover {
 }
 
 #content {
+    width: 100px;
+}
+
+#content button {
+    margin: 10px;
+    width: 200px;
+    font-size: 20px;
+    font-family: monospace;
+    font-weight: bold;
+    color: var(--text);
+    background-color: var(--3);
+    border-radius: 0px;
+    border-color: initial;
+    padding: 8px;
+}
+
+#content button:hover {
+    background-color: var(--text);
+    color: var(--3);
 }
 
 #profileImg {
@@ -78,7 +97,7 @@ button:hover, span:hover {
 }
 
 .hideSection {
-   display: none;
+    display: none;
 }
 
 .techImg {
@@ -115,8 +134,8 @@ footer {
 }
 
 #menu {
-    font-size:70px;
-    color:var(--text);
+    font-size: 70px;
+    color: var(--text);
 }
 
 button {
@@ -135,4 +154,16 @@ li {
 
 a {
     color: antiquewhite;
+}
+
+#portfolio {
+    bottom: 13vw;
+}
+
+#portCont1 {
+    margin-right: 300px;
+}
+
+#portCont2 {
+    display: none;
 }
