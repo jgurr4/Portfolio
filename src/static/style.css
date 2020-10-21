@@ -3,22 +3,62 @@
     --2: black;
     --3: mediumAquamarine;
     --text: white;
+    overflow-x: hidden;
 }
 
-@media screen and (max-width: 1060px) {
-
+@media only screen and (min-width: 1912px) {
+    body { width: 1912px; height: 900px; }
+    #menu { font-size: 70px; color: var(--text); }
+    #content { width: 100px; }
+    #content button { margin: 10px; width: 200px; font-size: 20px; font-family: monospace; font-weight: bold; color: var(--text); background-color: var(--3); border-radius: 0px; border-color: initial; padding: 8px; }
+    #profileImg { height: 350px; width: 350px; position: absolute; top: 100px; right: 650px; border-radius: 50%; }
+    #top-section { position: absolute; top: 180px; left: 500px; }
+    .section { position: absolute; bottom: 230px; left: 950px; }
+    #contact { margin: 0px 200px 0px 100px; width: 200px; bottom: 100px; }
+    #contact input { padding: 5px; margin: 10px; width: 250px; border-radius: 40px; }
+    #portfolio { bottom: 170px; width: 600px; }
+    .techImg { position: absolute; bottom: 135px; left: 400px; width: 250px; }
+    .techDesc { position: absolute; top: 760px; left: 150px; margin-right: 900px; }
+    .pagination a { color: black; float: left; padding: 8px 16px; text-decoration: none; transition: background-color .3s; }
+    div.pagination { position: relative; top: 5px; left: 150px; }
 }
 
-body {
-    position: relative;
-    width: 1912px;
-    height: 900px;
-    background-color: var(--1);
-    color: var(--text);
+@media only screen and (max-width: 1912px) {
+    body { width: 1000px; height: 900px; }
+    #menu { float: left; margin-right: 10px; font-size: 70px; color: var(--text); }
+    #content { float: left; margin-top: 10px;}
+    #content button { margin: 10px; width: 200px; font-size: 20px; font-family: monospace; font-weight: bold; color: var(--text); background-color: var(--3); border-radius: 0px; border-color: initial; padding: 8px; }
+    #profileImg { height: 280px; width: 280px; position: absolute; top: 160px; right: 300px; border-radius: 50%; }
+    #top-section { position: absolute; top: 180px; left: 100px; }
+    .section { position: absolute; bottom: 150px; left: 450px; }
+    #contact { margin: 0px 200px 0px 100px; width: 200px; bottom: 100px; }
+    #contact input { padding: 5px; margin: 10px; width: 250px; border-radius: 40px; }
+    #qualifications { bottom: 185px; }
+    #portfolio { bottom: 170px; width: 600px; }
+    .techImg { position: absolute; bottom: 200px; left: 130px; width: 180px; }
+    .techDesc { position: absolute; top: 700px; left: 30px; width: 400px; }
+    .pagination a { color: black; float: left; padding: 8px 16px; text-decoration: none; transition: background-color .3s; }
+    div.pagination { position: relative; top: 5px; left: 150px; }
+}
+
+.noSelect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
 ::selection {
     background: deepskyblue;
+}
+
+body {
+    position: relative;
+    margin: auto;
+    background-color: var(--1);
+    color: var(--text);
 }
 
 #hello {
@@ -35,19 +75,17 @@ h1 {
     margin: -5px;
 }
 
-/*
-The body and other elements inside it have to be automatically adjusted
-for smaller screens. The goal is that no matter how small or big the screen is
-the page will get small enough so that scrolling will not happen or be needed.
-*/
+h4 {
+    margin-bottom: 3px;
+}
 
-.noSelect {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+button {
+    color: var(--text);
+    background-color: var(--1);
+    border-radius: 30px;
+    border-color: var(--3);
+    padding: 8px;
+    margin-top: 5px;
 }
 
 button:focus, input:focus {
@@ -58,70 +96,17 @@ button:hover, span:hover {
     cursor: pointer;
 }
 
-#content {
-    width: 100px;
-}
-
-#content button {
-    margin: 10px;
-    width: 200px;
-    font-size: 20px;
-    font-family: monospace;
-    font-weight: bold;
-    color: var(--text);
-    background-color: var(--3);
-    border-radius: 0px;
-    border-color: initial;
-    padding: 8px;
-}
-
 #content button:hover {
     background-color: var(--text);
     color: var(--3);
-}
-
-#profileImg {
-    height: 350px;
-    width: 350px;
-    position: absolute;
-    top: 100px;
-    right: 650px;
-    border-radius: 50%;
-}
-
-#top-section {
-    position: absolute;
-    top: 180px;
-    left: 500px;
-}
-
-
-.section {
-    position: absolute;
-    bottom: 230px;
-    left: 950px;
 }
 
 .hideSection {
     display: none;
 }
 
-.techImg {
-    position: absolute;
-    bottom: 135px;
-    left: 400px;
-    width: 250px;
-}
-
 .hideImg {
     display: none;
-}
-
-.techDesc {
-    position: absolute;
-    top: 760px;
-    left: 150px;
-    margin-right: 900px;
 }
 
 .hideDesc {
@@ -139,19 +124,6 @@ footer {
     padding-right: 5px;
 }
 
-#menu {
-    font-size: 70px;
-    color: var(--text);
-}
-
-button {
-    color: var(--text);
-    background-color: var(--1);
-    border-radius: 30px;
-    border-color: var(--3);
-    padding: 8px;
-}
-
 li {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -162,18 +134,6 @@ a {
     color: antiquewhite;
 }
 
-#contact {
-    margin: 0px 200px 0px 100px;
-    width: 200px;
-    bottom: 150px;
-}
-
-#contact input {
-    padding: 5px;
-    margin: 10px;
-    width: 250px;
-    border-radius: 40px;
-}
 
 #contact button {
     width: 50%;
@@ -181,13 +141,6 @@ a {
     margin-top: 5px;
 }
 
-#portfolio {
-    bottom: 190px;
-    width: 600px;
-}
-
-.portCont {
-}
 
 .hidePort {
     display: none;
@@ -209,13 +162,6 @@ span.arrows {
     margin-left: 10px;
 }
 
-.pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-}
 
 .pagination a.active {
     background-color: dodgerblue;
@@ -226,8 +172,3 @@ span.arrows {
     background-color: #ddd;
 }
 
-div.pagination {
-    position: relative;
-    top: 5px;
-    left: 150px;
-}
