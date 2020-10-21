@@ -196,7 +196,7 @@ it will change with clickable buttons in left menu-->
         Vert.x. All of these reasons leads me to using Vert.x for all my Java webapps.</p>
     <p id="vimd" class="hideDesc"><a href="https://www.vim.org/" target="_blank" title="Click to see official site.">
         VIM</a>(Vi-Improved) is one of my all time favorite technologies I learned in the past
-        few years. It is simply an editor, but it is so powerful and has so many capabilities, that any code
+        few years. It is simply a text editor, but it is so powerful and has so many capabilities, that any code
         or even simple text documents you write will be done in much less time than it takes in normal text
         editors. Check out the webpage and you'll see more details explaining vim. All my programs are written in VIM.
     </p>
@@ -213,7 +213,8 @@ it will change with clickable buttons in left menu-->
 </div>
 
 <div id="contact" class="hideSection">
-    <form class="noSelect" method="post" action="/api/contact" onsubmit="alert('Your message has been sent. I will respond to you as soon as possible. Thank you!')">
+    <form class="noSelect" method="post" action="/api/contact"
+          onsubmit="alert('Your message has been sent. I will respond to you as soon as possible. Thank you!')">
         <input type="text" placeholder="name">
         <input type="text" placeholder="business">
         <input type="text" placeholder="position you're hiring for">
@@ -239,20 +240,20 @@ it will change with clickable buttons in left menu-->
     <div id="portCont2" class="hidePort">
         <li>CrawlWebpage:</li>
         <p>This is currently my most ambitious project. It is still a work in progress and it's a group effort
-            of me and two other developers.</p>
-        <p>It's basically a video game you play in your browser based on the online game "Dungeon Crawl Stone
-            Soup".</p>
+            with me and two other developers. It's basically a video game you play in your browser based on the online
+            game <a href="https://en.wikipedia.org/wiki/Dungeon_Crawl_Stone_Soup" target="_blank">"Dungeon Crawl Stone Soup".</a></p>
         <p>The reason I liked working on this project so much is it deepened my understanding of Java programming
-            with Vertx.
-            It also helped me learn how to create apps with Model-View-Controller concepts as well as
-            develop more skill with Web Routing, and finally I learned standard practices that businesses
-            such as American Express use for querying Couchbase with N1QL on this project.</p>
+            with Vertx. It also helped me develop skill with Model-View-Controller concepts as well as
+            with Web Routing. I also learned standard practices that businesses
+            such as American Express use for querying Couchbase with N1QL.</p>
     </div>
     <div class="pagination">
+        <div class="noSelect">
         <span id="leftArrow" class="arrows" onclick="changePage(this.id)">&lt;</span>
         <a href="#" id="1" class="active" onclick="changePage(this.id)">1</a>
         <a href="#" id="2" class="inactive" onclick="changePage(this.id)">2</a>
         <span id="rightArrow" class="arrows" onclick="changePage(this.id)">&gt;</span>
+        </div>
     </div>
 </div>
 
