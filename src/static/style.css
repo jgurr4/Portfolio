@@ -25,6 +25,7 @@ for screens 1912 pixels or larger:
     .techDesc { position: absolute; top: 760px; left: 150px; margin-right: 900px; }
     .pagination a { color: black; float: left; padding: 8px 16px; text-decoration: none; transition: background-color .3s; }
     div.pagination { position: relative; top: 5px; left: 150px; }
+    footer { position: absolute; bottom: 20px; right: 20px; }
 }
 
 /*
@@ -47,12 +48,14 @@ for screens 1911 pixels or smaller:
     .techDesc { position: absolute; top: 700px; left: 30px; width: 400px; }
     .pagination a { color: black; float: left; padding: 8px 16px; text-decoration: none; transition: background-color .3s; }
     div.pagination { position: relative; top: 5px; left: 150px; }
+    footer { position: absolute; bottom: 10px; right: 0px; }
 }
 
 /*
 for screens 1000 pixels or smaller:
 */
 @media only screen and (max-width: 1000px) {
+    :root { overflow-x: auto; }
     body { width: 600px; height: 710px; }
     #menu { float: left; margin-right: 10px; font-size: 70px; color: var(--text); }
     #content { float: left; margin-top: 10px;}
@@ -64,9 +67,9 @@ for screens 1000 pixels or smaller:
     #contact input { padding: 5px; margin: 10px; width: 250px; border-radius: 40px; }
     #qualifications { bottom: 125px; }
     #portfolio { bottom: 60px; width: 300px; }
-    .techImg { position: absolute; bottom: 190px; left: 60px; width: 120px; }
-    #js { width: 100px; }
-    .techDesc { overflow-y: scroll; position: absolute; top: 520px; left: 10px; width: 250px; height: 150px; }
+    .techImg { position: absolute; bottom: 160px; left: 60px; width: 145px; }
+    #js { width: 100px; height: 120px; }
+    .techDesc { overflow-y: auto; position: absolute; top: 550px; left: 10px; width: 250px; height: 150px; }
     .pagination a { color: black; float: left; padding: 8px 16px; text-decoration: none; transition: background-color .3s; }
     div.pagination { position: relative; top: 5px; left: 150px; }
     footer { display: none; }
@@ -145,11 +148,6 @@ button:hover, span:hover {
     display: none;
 }
 
-footer {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-}
 
 .fa-github, .fa-linkedin {
     padding-left: 5px;
