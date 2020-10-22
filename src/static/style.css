@@ -16,10 +16,10 @@ for screens 1912 pixels or larger:
     #content button { margin: 10px; width: 200px; font-size: 20px; font-family: monospace; font-weight: bold; color: var(--text); background-color: var(--3); border-radius: 0px; border-color: initial; padding: 8px; }
     #profileImg { height: 350px; width: 350px; position: absolute; top: 100px; right: 650px; border-radius: 50%; }
     #top-section { position: absolute; top: 180px; left: 500px; }
-    .section { position: absolute; bottom: 230px; left: 950px; }
+    .section { position: absolute; bottom: 200px; left: 950px; }
     #contact { margin: 0px 200px 0px 100px; width: 200px; bottom: 100px; }
     #contact input { padding: 5px; margin: 10px; width: 250px; border-radius: 40px; }
-    #portfolio { bottom: 170px; width: 600px; }
+    #portfolio { bottom: 160px; width: 600px; }
     .techImg { position: absolute; bottom: 135px; left: 400px; width: 250px; }
     #js { width: 160px; height: 180px; left: 450px;}
     .techDesc { position: absolute; top: 760px; left: 150px; margin-right: 900px; }

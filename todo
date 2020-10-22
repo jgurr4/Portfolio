@@ -1,4 +1,13 @@
-1: Now that base webpage is set up, I need to finish building the foundation of media queries or flexbox or grid to make it responsive in the way I want. (See my css page for details about which way is best.)
-2: After that add a header and footer and asides that are interesting or lead to some cool links of places and philosophies I like about programming. Such as Open GNU License, Linux, etc... Or maybe links to some of my other sites like on social media, my linkedIn, email address, pdf resume etc...
-3: Try to think of some things I can use JavaScript and Java for in my project. Obviously Java can be used to route to the website and any other pages. At this point, I can't think of any for JS. JavaScript may not be able to be used at all really.
-4: Add some cool styles to backgrounds like I do with my other webpages. Body background is fine, but I want to have the blue background have some cool styling on it.
+
+ -> Add backend code for routing.
+ -> Add backend code to handle form submission data and sends to database.
+ -> Add backend code to make it dockerized.
+ -> Add a better profile pic.
+ -> Finish getting crawl project functional.
+ -> Finish getting MySQL certified.
+ -> fix bug: when using Portfolio section in the smallest view, it creates a scrollbar at the bottom for some reason.
+(After this I am ready to post online and add to server.)
+
+ -> Add an arrow or something that helps employers know that the menu button is actually a button.
+ -> Add animations to picture changes and menu changes
+ -> Consider adding RancherOS as a technology on the list.
