@@ -29,7 +29,7 @@ for screens 1912 pixels or larger:
 }
 
 /*
-for screens 1911 pixels or smaller:
+for screens between 1000 and 1911px:
 */
 @media only screen and (max-width: 1912px) {
     body { width: 1000px; height: 900px; }
@@ -42,7 +42,7 @@ for screens 1911 pixels or smaller:
     #contact { margin: 0px 200px 0px 100px; width: 200px; bottom: 100px; }
     #contact input { padding: 5px; margin: 10px; width: 250px; border-radius: 40px; }
     #qualifications { bottom: 185px; }
-    #portfolio { bottom: 170px; width: 600px; }
+    #portfolio { bottom: 150px; width: 550px; }
     .techImg { position: absolute; bottom: 200px; left: 130px; width: 180px; }
     #js { width: 160px; height: 180px; }
     .techDesc { position: absolute; top: 700px; left: 30px; width: 400px; }

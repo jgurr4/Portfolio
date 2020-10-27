@@ -1,4 +1,4 @@
-package main.java.myPortfolio;
+package myPortfolio;
 
 //TODO: Find out why this isn't working
 import io.vertx.core.Vertx;
