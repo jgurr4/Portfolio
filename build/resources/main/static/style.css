@@ -19,7 +19,7 @@ for screens 1912 pixels or larger:
     .section { position: absolute; bottom: 200px; left: 950px; }
     #contact { margin: 0px 200px 0px 100px; width: 200px; bottom: 100px; }
     #contact input { padding: 5px; margin: 10px; width: 250px; border-radius: 40px; }
-    #portfolio { bottom: 160px; width: 600px; }
+    #portfolio { bottom: 140px; width: 600px; }
     .techImg { position: absolute; bottom: 135px; left: 400px; width: 250px; }
     #js { width: 160px; height: 180px; left: 450px;}
     .techDesc { position: absolute; top: 760px; left: 150px; margin-right: 900px; }
@@ -66,7 +66,7 @@ for screens 1000 pixels or smaller:
     #contact { margin: 0px 200px 0px 100px; width: 200px; bottom: 100px; left: 200px; }
     #contact input { padding: 5px; margin: 10px; width: 250px; border-radius: 40px; }
     #qualifications { bottom: 125px; }
-    #portfolio { bottom: 60px; width: 300px; }
+    #portfolio { bottom: 25px; width: 300px; }
     .techImg { position: absolute; bottom: 160px; left: 60px; width: 145px; }
     #js { width: 100px; height: 120px; }
     .techDesc { overflow-y: auto; position: absolute; top: 550px; left: 10px; width: 250px; height: 150px; }
