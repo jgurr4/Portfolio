@@ -23,32 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb17eeca-57b6-471c-94bd-c97bd3910a0e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/myPortfolio/HttpServerVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myPortfolio/HttpServerVerticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/BASH.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/BASH.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/Couchbase.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/Couchbase.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/HTML+CSS.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/HTML+CSS.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/Intellij.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/Java.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/Java.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/JavaScript.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/JavaScript.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/Linux.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/Linux.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/MySQL.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/MySQL.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/Nodejs.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/Nodejs.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/VIM.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/VIM.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/Vertx.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/Vertx.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/docker.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/docker.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/docker2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/github.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/github.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/profilePic(old).jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/profilePic(old).jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/profilePic.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/profilePic.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/images/rxJava.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/images/rxJava.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/jared.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/jared.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/resume.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/resume.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myPortfolio/MariadbVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myPortfolio/MariadbVerticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start_mariadb" beforeDir="false" afterPath="$PROJECT_DIR$/start_mariadb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,17 +102,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.StartServer" />
@@ -150,6 +119,8 @@
       <workItem from="1603718273409" duration="62000" />
       <workItem from="1603835900851" duration="6253000" />
       <workItem from="1603855858802" duration="10170000" />
+      <workItem from="1603914110214" duration="2929000" />
+      <workItem from="1603976799964" duration="2970000" />
     </task>
     <servers />
   </component>
@@ -185,38 +156,38 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="462" y="264" width="424" height="570" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1603851155153" />
-    <state width="1878" height="342" key="GridCell.Tab.0.bottom" timestamp="1603900542028">
+    <state width="1878" height="277" key="GridCell.Tab.0.bottom" timestamp="1603979765287">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="342" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1603900542028" />
-    <state width="1878" height="342" key="GridCell.Tab.0.center" timestamp="1603900542026">
+    <state width="1878" height="277" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1603979765287" />
+    <state width="1878" height="277" key="GridCell.Tab.0.center" timestamp="1603979765286">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="342" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1603900542026" />
-    <state width="1878" height="342" key="GridCell.Tab.0.left" timestamp="1603900542025">
+    <state width="1878" height="277" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1603979765286" />
+    <state width="1878" height="277" key="GridCell.Tab.0.left" timestamp="1603979765285">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="342" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1603900542025" />
-    <state width="1878" height="342" key="GridCell.Tab.0.right" timestamp="1603900542027">
+    <state width="1878" height="277" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1603979765285" />
+    <state width="1878" height="277" key="GridCell.Tab.0.right" timestamp="1603979765286">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="342" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1603900542027" />
-    <state width="1878" height="342" key="GridCell.Tab.1.bottom" timestamp="1603900542030">
+    <state width="1878" height="277" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1603979765286" />
+    <state width="1878" height="342" key="GridCell.Tab.1.bottom" timestamp="1603979761029">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="342" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1603900542030" />
-    <state width="1878" height="342" key="GridCell.Tab.1.center" timestamp="1603900542029">
+    <state width="1878" height="342" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1603979761029" />
+    <state width="1878" height="342" key="GridCell.Tab.1.center" timestamp="1603979761028">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="342" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1603900542029" />
-    <state width="1878" height="342" key="GridCell.Tab.1.left" timestamp="1603900542028">
+    <state width="1878" height="342" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1603979761028" />
+    <state width="1878" height="342" key="GridCell.Tab.1.left" timestamp="1603979761028">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="342" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1603900542028" />
-    <state width="1878" height="342" key="GridCell.Tab.1.right" timestamp="1603900542030">
+    <state width="1878" height="342" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1603979761028" />
+    <state width="1878" height="342" key="GridCell.Tab.1.right" timestamp="1603979761029">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1878" height="342" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1603900542030" />
+    <state width="1878" height="342" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1603979761029" />
     <state x="264" y="291" width="717" height="512" key="NewModule_or_Project.wizard" timestamp="1603851177335">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -225,9 +196,24 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="440" y="195" width="992" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1603862385027" />
+    <state width="960" height="526" key="XDebugger.FullValuePopup" timestamp="1603977933987">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="960" height="526" key="XDebugger.FullValuePopup/0.27.1920.1053@0.27.1920.1053" timestamp="1603977933987" />
     <state x="251" y="165" width="762" height="749" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1603858569994">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="251" y="165" width="762" height="749" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1603858569994" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/myPortfolio/HttpServerVerticle.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

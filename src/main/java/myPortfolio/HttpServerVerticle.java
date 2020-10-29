@@ -1,12 +1,14 @@
 package myPortfolio;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import io.vertx.reactivex.core.buffer.Buffer;
 import io.vertx.reactivex.ext.web.handler.StaticHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -61,29 +63,39 @@ public class HttpServerVerticle extends AbstractVerticle {
         try {
             LOGGER.debug("GET " + path);
             path = path.substring(1);
-            final InputStream stream = Thread.currentThread().getContextClassLoader().getResourceAsStream(path);
-            if (stream != null) {
-                final String text = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))
-                    .lines()
-                    .collect(Collectors.joining("\n"));
-                if (path.endsWith(".html")) {
-                    response.putHeader("Content-Type", "text/html");
-                } else if (path.endsWith(".css")) {
-                    response.putHeader("Content-Type", "text/css");
-                } else if (path.endsWith(".png")) {
-                    response.putHeader("Content-Type", "image/png");
-                } else if (path.endsWith(".jpg")) {
-                    response.putHeader("Content-Type", "image/jpg");
-                } else {
-                    response.end("<html><body>Error filetype unknown: " + path + "</body></html>");
-                }
-                response.end(text);
-                response.setStatusCode(200);
-                LOGGER.debug("text =" + text);
+            boolean isText = true;
+            if (path.endsWith(".html")) {
+                response.putHeader("Content-Type", "text/html");
+            } else if (path.endsWith(".css")) {
+                response.putHeader("Content-Type", "text/css");
+            } else if (path.endsWith(".png")) {
+                response.putHeader("Content-Type", "image/png");
+                isText = false;
+            } else if (path.endsWith(".jpg")) {
+                response.putHeader("Content-Type", "image/jpg");
+                isText = false;
             } else {
+                response.setStatusCode(502);
+                response.end("<html><body>Error filetype unknown: " + path + "</body></html>");
+                return;
+            }
+
+            final InputStream stream = Thread.currentThread().getContextClassLoader().getResourceAsStream(path);
+            if (stream == null) {
                 LOGGER.warn("Resource not found: " + path);
                 response.setStatusCode(404);
                 response.end();
+            } else if(isText) {
+                final String text = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))
+                    .lines()
+                    .collect(Collectors.joining("\n"));
+                response.setStatusCode(200);
+                response.end(text);
+                LOGGER.debug("text =" + text);
+            } else {
+                Buffer buffer = Buffer.buffer(stream.readAllBytes());
+                response.setStatusCode(200);
+                response.end(buffer);
             }
         } catch (Exception e) {
             LOGGER.error("Problem fetching static file: " + path, e);

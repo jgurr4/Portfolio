@@ -35,10 +35,10 @@ public class MariadbVerticle extends AbstractVerticle {
         final String business = json.getString("business"); */
         final MySQLConnectOptions connectOptions = new MySQLConnectOptions()
                 .setPort(3306)
-                .setHost("the-host")
-                .setDatabase("the-db")
-                .setUser("user")
-                .setPassword("secret");
+                .setHost("localhost")
+                .setDatabase("contact")
+                .setUser("root")
+                .setPassword("super03");
 
         PoolOptions poolOptions = new PoolOptions();
 
