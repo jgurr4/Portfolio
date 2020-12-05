@@ -193,7 +193,7 @@
 <div id="qualifications" class="hideSection">
     <h3>Qualifications:</h3>
     <li>MySQL Certified from Oracle</li>
-    <li>2 years of experience developing web applications.</li>
+    <li>2 years of experience developing web applications. (See Portfolio)</li>
     <li>Mostly self-taught aside from some mentorship.</li>
     <li>1 year of college</li>
     <li>Deep understanding of computers and hardware. Built several powerful pc's from scratch for people.</li>
@@ -203,12 +203,12 @@
 <div id="contact" class="hideSection">
     <form class="noSelect" method="post" action="/api/contact"
           onsubmit="alert('Your message has been sent. I will respond to you as soon as possible. Thank you!')">
-        <input type="text" placeholder="name">
-        <input type="text" placeholder="business">
-        <input type="text" placeholder="position you're hiring for">
-        <input type="text" placeholder="When I should call you back">
-        <input type="text" placeholder="phone number">
-        <input type="text" placeholder="(optional) day you want to do an interview">
+        <input type="text" name="name" placeholder="name" required>
+        <input type="text" name="business" placeholder="business" required>
+        <input type="text" name="position" placeholder="position you're hiring for" required>
+        <input type="text" name="callback" placeholder="When I should call you back" required>
+        <input type="text" name="phone" placeholder="phone number" required>
+        <input type="text" name="interview_date" placeholder="(optional) day you want to do an interview">
         <button type="submit" value="Submit">Submit</button>
     </form>
 </div>
@@ -219,8 +219,9 @@
         <h3>Here is a list of my projects with many more on the way:</h3>
         <li><a href="http://lawnarizonablog.com" target="_blank">http://lawnarizonablog.com</a></li>
         <p>This was my very first project I ever did. Built with Node.js and MySQL/Mariadb connector.
-            The goal was to create a professional looking lawn business site so I could practice developing skill
-            with Database Integration for web apps. It runs completely within Docker-Compose containers.</p>
+            The goal was to create a professional looking lawn business site so I could practice developing
+            webpages with Database Integration. It runs completely within Docker containers. It is also built
+            with REST API for handling http requests/responses, and CRUD API for handling user data/sessions.</p>
         <li><a href="http://arizonapomeranians.com" target="_blank">http://arizonapomeranians.com</a></li>
         <p>This was my second project, client had an old webpage they wanted me to replace with a more modern one.
             but still keep the appealing parts of it. Here I got to practice my skill with JS-DOM manipulation for the
@@ -228,13 +229,14 @@
     </div>
     <div id="portCont2" class="hidePort">
         <li>CrawlWebpage:</li>
-        <p>This is currently my most ambitious project. It is still a work in progress and it's a group effort
+        <p>This is currently my most ambitious project. It is a work in progress and it's a group effort
             with me and two other developers. It's basically a video game you play in your browser based on the online
             game <a href="https://en.wikipedia.org/wiki/Dungeon_Crawl_Stone_Soup" target="_blank">"Dungeon Crawl Stone Soup".</a></p>
-        <p>The reason I liked working on this project so much is that it deepened my understanding of Java programming
+        <p>I liked working on this project because it deepened my understanding of Java programming
             with Vertx. It also helped me develop skill with Model-View-Controller concepts as well as
-            with Web Routing. I also learned standard practices that businesses
-            such as American Express use for querying Couchbase with N1QL.</p>
+            with Web Routing. I also learned standard practices that businesses such as American Express
+            use for querying Couchbase with N1QL. This was also helpful in continuing my understanding of
+            REST and CRUD API.</p>
     </div>
     <div class="pagination">
         <div class="noSelect">
@@ -248,7 +250,7 @@
 
 </body>
 <footer>
-    <p>This webpage was built with Java/Vertx and HTML/CSS/JS.</p>
+    <p>This webpage was built with Java/Vertx and Docker.</p>
 </footer>
 
 <script>

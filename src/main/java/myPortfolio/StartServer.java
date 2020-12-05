@@ -1,6 +1,5 @@
 package myPortfolio;
 
-//TODO: Find out why this isn't working
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
 

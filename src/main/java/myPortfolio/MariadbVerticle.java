@@ -15,6 +15,8 @@ import io.vertx.reactivex.core.*;
 import io.vertx.reactivex.core.eventbus.EventBus;
 import io.vertx.reactivex.core.eventbus.Message;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class MariadbVerticle extends AbstractVerticle {
@@ -24,29 +26,30 @@ public class MariadbVerticle extends AbstractVerticle {
     public Completable rxStart() {
         final EventBus eb = vertx.eventBus();
         eb.consumer("mariadb", this::handleInsert);
+        //Place pool options here.
         return Completable.complete();
     }
 
     private void handleInsert(Message<String> message) {
         LOGGER.debug("MariadbVerticle received message : " + message.body());
-        final JsonObject json = JsonObject.mapFrom(message.body());
-        final List list = json.mapTo(List.class);
+        final JsonObject json = new JsonObject(message.body());
+        final Collection list = json.getMap().values();
 /*      final String name = json.getString("name");
         final String business = json.getString("business"); */
         final MySQLConnectOptions connectOptions = new MySQLConnectOptions()
                 .setPort(3306)
                 .setHost("localhost")
                 .setDatabase("contact")
-                .setUser("root")
+                .setUser("jared")
                 .setPassword("super03");
 
         PoolOptions poolOptions = new PoolOptions();
 
-        MySQLPool client = MySQLPool.pool(connectOptions, poolOptions);
+        MySQLPool client = MySQLPool.pool(vertx, connectOptions, poolOptions);
 
         client
                 .preparedQuery("INSERT INTO contacts(name, business, position, callback, phone, interview_date) values (?, ?, ?, ?, ?, ?)")
-                .execute(Tuple.tuple(list), ar -> {
+                .execute(Tuple.tuple(new ArrayList(list)), ar -> {
                     if (ar.succeeded()) {
                         RowSet<Row> result = ar.result();
                         LOGGER.debug("Got " + result.size() + " rows ");

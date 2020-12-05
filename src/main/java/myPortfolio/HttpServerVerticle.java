@@ -1,9 +1,6 @@
 package myPortfolio;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -85,7 +82,7 @@ public class HttpServerVerticle extends AbstractVerticle {
                 LOGGER.warn("Resource not found: " + path);
                 response.setStatusCode(404);
                 response.end();
-            } else if(isText) {
+            } else if (isText) {
                 final String text = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))
                     .lines()
                     .collect(Collectors.joining("\n"));
@@ -122,6 +119,7 @@ public class HttpServerVerticle extends AbstractVerticle {
             eb.rxRequest("mariadb", object.encode())
                 .subscribe(e -> {
                         LOGGER.debug("HttpServer Verticle Received reply: " + e.body());
+                        //TODO Ask how to get this part to successfully refresh the page...
                     },
                     err -> {
                         LOGGER.debug("Error communicating to MariadbVerticle. " + err.getMessage());

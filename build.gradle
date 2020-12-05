@@ -35,6 +35,7 @@ dependencies {
     implementation 'io.vertx:vertx-sockjs-service-proxy:3.9.1'
     implementation 'ch.qos.logback:logback-classic:1.2.3'
     implementation "io.vertx:vertx-mysql-client:3.9.4"
+    implementation 'mysql:mysql-connector-java:8.0.22'
     testImplementation "io.vertx:vertx-junit5:$vertxVersion"
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterEngineVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitJupiterEngineVersion"
