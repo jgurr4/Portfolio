@@ -1,0 +1,21 @@
+= Welcome to my Github page!
+
+I have links to each of my past projects on my portfolio page. Please check there if you want to see the webpages.
+
+If you would like to see each projects source files, then just use these links below:
+
+
+Wilderness Create webpage source files:
+https://github.com/jgurr4/phptest
+
+Crawl App source files:
+https://github.com/jgurr4/training-crawl
+
+JERBIL source files:
+https://github.com/jgurr4/jerbil
+
+lawncare webpages source:
+https://github.com/jgurr4/lawnWebpage
+
+Arizona Pomeranians webpages source:
+https://github.com/jgurr4/arizonaPomeranians
