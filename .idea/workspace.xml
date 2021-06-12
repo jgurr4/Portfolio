@@ -23,33 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb17eeca-57b6-471c-94bd-c97bd3910a0e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/myPortfolio/HttpServerVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/myPortfolio/HttpServerVerticle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/myPortfolio/MariadbVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/myPortfolio/MariadbVerticle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/myPortfolio/StartServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/myPortfolio/StartServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/jared.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/jared.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myPortfolio/HttpServerVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myPortfolio/HttpServerVerticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myPortfolio/MariadbVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myPortfolio/MariadbVerticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/myPortfolio/StartServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myPortfolio/StartServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/jared.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/jared.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start_mariadb" beforeDir="false" afterPath="$PROJECT_DIR$/start_mariadb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -67,13 +51,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JupyterTrust" id="ec00b6a2-31ae-463d-a226-1a9c0ec37ac9" />
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="1jPuudqUyAOZkDju8alVyXYdmVj" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -85,10 +62,17 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mysqlConsoleApp/build.gradle" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -145,6 +129,9 @@
       <workItem from="1606527546331" duration="1626000" />
       <workItem from="1606580107651" duration="5067000" />
       <workItem from="1606743291687" duration="110000" />
+      <workItem from="1609968651361" duration="25000" />
+      <workItem from="1609968699899" duration="2586000" />
+      <workItem from="1623519596728" duration="3382000" />
     </task>
     <servers />
   </component>
@@ -162,75 +149,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="-53" y="324" width="1167" height="299" key="#SQL_Dialects" timestamp="1603857885867">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="-53" y="324" width="1167" height="299" key="#SQL_Dialects/0.27.1920.1053@0.27.1920.1053" timestamp="1603857885867" />
-    <state x="409" y="206" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603860265085">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="409" y="206" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1603860265085" />
-    <state x="299" y="341" width="554" height="400" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603858419262">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="299" y="341" width="554" height="400" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1603858419262" />
-    <state x="462" y="264" width="424" height="570" key="FileChooserDialogImpl" timestamp="1603851155153">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="462" y="264" width="424" height="570" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1603851155153" />
-    <state width="1878" height="277" key="GridCell.Tab.0.bottom" timestamp="1604861957213">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1878" height="277" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1604861957213" />
-    <state width="1878" height="277" key="GridCell.Tab.0.center" timestamp="1604861957211">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1878" height="277" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1604861957211" />
-    <state width="1878" height="277" key="GridCell.Tab.0.left" timestamp="1604861957211">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1878" height="277" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1604861957211" />
-    <state width="1878" height="277" key="GridCell.Tab.0.right" timestamp="1604861957211">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1878" height="277" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1604861957211" />
-    <state width="1878" height="276" key="GridCell.Tab.1.bottom" timestamp="1604085742724">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1878" height="276" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1604085742724" />
-    <state width="1878" height="276" key="GridCell.Tab.1.center" timestamp="1604085742722">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1878" height="276" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1604085742722" />
-    <state width="1878" height="276" key="GridCell.Tab.1.left" timestamp="1604085742721">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1878" height="276" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1604085742721" />
-    <state width="1878" height="276" key="GridCell.Tab.1.right" timestamp="1604085742724">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="1878" height="276" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1604085742724" />
-    <state x="264" y="291" width="717" height="512" key="NewModule_or_Project.wizard" timestamp="1603851177335">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="264" y="291" width="717" height="512" key="NewModule_or_Project.wizard/0.27.1920.1053@0.27.1920.1053" timestamp="1603851177335" />
-    <state x="440" y="195" width="992" height="737" key="SettingsEditor" timestamp="1603862385027">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="440" y="195" width="992" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1603862385027" />
-    <state width="960" height="526" key="XDebugger.FullValuePopup" timestamp="1603977933987">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state width="960" height="526" key="XDebugger.FullValuePopup/0.27.1920.1053@0.27.1920.1053" timestamp="1603977933987" />
-    <state x="251" y="165" width="762" height="749" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606581681497">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="251" y="165" width="762" height="749" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1606581681497" />
-    <state x="554" y="156" width="802" height="802" key="new project wizard" timestamp="1604861954036">
-      <screen x="0" y="27" width="1920" height="1053" />
-    </state>
-    <state x="554" y="156" width="802" height="802" key="new project wizard/0.27.1920.1053@0.27.1920.1053" timestamp="1604861954036" />
   </component>
 </project>
