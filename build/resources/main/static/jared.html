@@ -15,29 +15,33 @@
     <button onclick="replaceSection(this.value)" value="portfolio">Portfolio</button>
 </div>
 
-<img id="profileImg" class="noSelect" src="images/profilePic.jpg">
+<img id="profileImg" class="noSelect" src="images/profile.jpg">
 <div id="top-section">
     <h3 class="noSelect" id="hello">Hello I'm</h3>
     <h1>Jared Gurr</h1>
     <h3>Backend Web Developer</h3>
-    <p><i class="far fa-envelope"></i> jared@gurrfamily.com</p>
-    <p><i class="fas fa-phone"></i> +1 480 283 5152</p>
-    <p><i class="fas fa-map-marker-alt"></i> 27, San Tan Valley, Arizona, United States</p>
+<!--
+    <p><i class="far fa-envelope"></i> jared@fakeemail.com</p>
+    <p><i class="fas fa-phone"></i> +1 480 000 0000</p>
+-->
+    <p><i class="fas fa-map-marker-alt"></i> 28, San Tan Valley, Arizona, United States</p>
     <div class="noSelect">
         <a target="_blank" href="https://linkedin.com/in/jared-gurr-173008b7" class="fa fa-linkedin"></a>
         <a target="_blank" href="https://github.com/jgurr4/Portfolio" class="fa fa-github"></a>
+        <a target="_blank" href="https://www.codewars.com/users/Nosferatu123" class="fas fa-code" style="margin-left: 4px"></a>
+        <a target="_blank" href="https://stackoverflow.com/users/12779135/senorcardgage" class="fab fa-stack-overflow" style="margin-left: 10px"></a>
     </div>
 </div>
 
 <div id="about" class="section">
     <h3>About Me</h3>
     <h4>I am currently working as a independent contractor doing backend web development. I have built several
-        websites and apps which utilize my skills with database connectors for database technologies such as
-        Mariadb/MySQL and Couchbase. I have also acquired skill with: </h4>
+        websites and apps completely from scratch (including this one) which utilize my skills with the technologies listed here: </h4>
 
     <div id="buttons" class="noSelect">
         <button onclick="switchImg(this.value)" class="techBtn" value="html">HTML/CSS</button>
         <button onclick="switchImg(this.value)" class="techBtn" value="js">JavaScript</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="jquery">JQuery</button>
         <button onclick="switchImg(this.value)" class="techBtn" value="node">Node.js</button>
         <button onclick="switchImg(this.value)" class="techBtn" value="java">Java</button>
         <button onclick="switchImg(this.value)" class="techBtn" value="vertx">Vertx</button>
@@ -86,6 +90,10 @@
        title="Click to see official site.">
         <img id="js" class="hideImg" src="images/JavaScript.png">
     </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"
+       title="Click to see official site.">
+        <img id="jquery" class="hideImg" src="images/jquery.png">
+    </a>
     <a href="https://en.wikipedia.org/wiki/Linux" target="_blank" title="Click to see official site.">
         <img id="linux" class="hideImg" src="images/Linux.png">
     </a>
@@ -109,9 +117,9 @@
 <div>
     <p id="bashd" class="techDesc"><a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)" target="_blank"
                                       title="Click to see official site.">
-        Bourne-Again Shell</a> is a shell with powerful scripting capabilities and regex
-        searches. I use it for automating scripts for MySQL/Couchbase queries, deploying Docker
-        containers, Github push/pull updates, and many more System Administrator duties.</p>
+        Bourne-Again Shell</a> is a shell with powerful scripting capabilities. I use it for automating scripts for
+        MySQL/Couchbase queries, deploying Docker containers, Github push/pull updates, moving files remotely using SSH and rsync,
+        and many more System Administrator duties.</p>
     <p id="couchbased" class="hideDesc"><a href="https://docs.couchbase.com/home/server.html" target="_blank"
                                            title="Click to see official site.">
         Couchbase</a> is a NoSQL database which uses json Documents to store data.
@@ -126,8 +134,8 @@
     <p id="gitd" class="hideDesc"><a href="https://git-scm.com/" target="_blank" title="Click to see official site.">
         Git</a> is a minimalistic and lightweight but powerful version control software
         which makes it easy to develop projects/apps and explore ideas in separate "branches", and if some new feature
-        breaks my app, I can always rewind back to a previous state when it worked. It's also great for
-        team-driven development.</p>
+        breaks my app, I can always rewind back to a previous state when it worked. It's exceptionally good for use
+        in a team environment.</p>
     <p id="htmld" class="hideDesc"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"
                                       title="Click to see official site.">
         HTML</a> and <a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank"
@@ -138,9 +146,7 @@
                                        title="Click to see official site.">
         IntelliJ IDEA</a> is my preferred Java IDE. I previously used Eclipse, but found
         that IntelliJ was more intuitive and required less configuration than Eclipse did. Thanks to
-        IntelliJ Ultimate my productivity has definitely increased substantially, but don't expect me to have
-        any numbers to substantiate that claim. Suffice it to say, it at least feels like I am getting more done
-        with it than I was with other IDE's.</p>
+        IntelliJ Ultimate my productivity has definitely increased substantially.</p>
     <p id="javad" class="hideDesc">I use <a href="https://en.wikipedia.org/wiki/Java_(programming_language)"
                                             target="_blank" title="Click to see official site.">
         Java</a> as the main backend language of all my web applications. This is
@@ -153,6 +159,10 @@
         JavaScript</a> is the first programming language I learned, and it's what I
         use to manipulate the HTML DOM for apps that require it. Also it's what I use to communicate front-end websites
         to Java Backend programs.</p>
+    <p id="jqueryd" class="hideDesc"><a href="https://jquery.com/" target="_blank"
+                                        title="Click to see official site.">
+    JQuery</a> and AJAX are my preferred means of making responsive webpages. It makes submitting forms and
+    obtaining results from database queries instantaneous.</p>
     <p id="linuxd" class="hideDesc">After I built my own PC, I decided to install both Windows and <a
             href="https://en.wikipedia.org/wiki/Linux" target="_blank" title="Click to see official site.">
         Linux</a> on it in a dual boot configuration. Within a short time, I found out I liked developing within
@@ -162,8 +172,7 @@
     <p id="mysqld" class="hideDesc"><a href="https://mariadb.org/about/" target="_blank"
                                        title="Click to see official site.">
         MySQL/MariaDB</a> are RDBMS(Relational Database Management Systems) I learned as my primary method of storing data
-        for my websites. This is one of my most studied languages since it is my specialty and I am Oracle Certified with
-        it.</p>
+        for my websites. This is one of my most studied languages and I consider it my specialty.</p>
     <p id="noded" class="hideDesc"><a href="https://nodejs.org/en/about/" target="_blank"
                                       title="Click to see official site.">
         Node.Js</a> is the program I learned to use before I knew Java/Vertx.
@@ -171,29 +180,30 @@
         technologies I am very familiar with, and can use effectively.</p>
     <p id="rxjavad" class="hideDesc"><a href="https://github.com/ReactiveX/RxJava" target="_blank"
                                         title="Click to see official site.">
-        RXJava2</a> was the reactive Extensions package I learned for use with Vertx,
-        and since Couchbase uses only Reactor Core I also learned that. I learned them so that I could make my Java
-        code reactive. So I am very familiar with Reactive code and it's syntax.</p>
+        RXJava2</a> was the reactive Extensions package I learned for use with Java/Vertx.
+        Since Couchbase uses only Reactor Core I also learned that. I learned them so that I could make my Java
+        code reactive. So I am familiar with Reactive code concepts and syntax.</p>
     <p id="vertxd" class="hideDesc"><a href="https://vertx.io/" target="_blank" title="Click to see official site.">
         Vert.x</a> is the technology that makes all my Java Code Asynchronous and
         it makes communication between backend and frontend code, as well as communication between Java classes very
-        simple/intuitive with it's eventBus messaging system. Beyond that, when it is combined with couchbase database
-        it is a great
-        recipe for handling communication between servers and clients even if there are millions of people logging
-        in at the same time. Vert.x also has tons of helpful documentation. In my opinion Routing webpages also seems
-        easier in Vert.x. All of these reasons leads me to using Vert.x for all my Java webapps.</p>
+        simple/intuitive with it's eventBus messaging system. Beyond that, when it is combined with Couchbase or Mysql Database
+        it is a great recipe for handling communication between servers and clients even if there are millions of people logging
+        in at the same time. In my opinion Routing webpages also seems easier in Vert.x. All of these reasons leads me to
+        using Vert.x for many of my Java webapps.</p>
     <p id="vimd" class="hideDesc"><a href="https://www.vim.org/" target="_blank" title="Click to see official site.">
         VIM</a>(Vi-Improved) is one of my all time favorite technologies I learned in the past
         few years. It is simply a text editor, but it is so powerful and has so many capabilities, that any code
         or even simple text documents you write will be done in much less time than it takes in normal text
-        editors. Check out the webpage and you'll see more details explaining vim. All my programs are written in VIM.
+        editors. Check out the webpage and you'll see more details explaining vim. All my code is typed with VIM.
     </p>
 </div>
 
 <div id="qualifications" class="hideSection">
     <h3>Qualifications:</h3>
+<!--
     <li>MySQL Certified from Oracle</li>
-    <li>2 years of experience developing web applications. (See Portfolio)</li>
+-->
+    <li>3 years of experience developing web applications. (See Portfolio)</li>
     <li>Mostly self-taught aside from some mentorship.</li>
     <li>1 year of college</li>
     <li>Deep understanding of computers and hardware. Built several powerful pc's from scratch for people.</li>
@@ -221,7 +231,7 @@
         <p>This was my very first project I ever did. Built with Node.js and MySQL/Mariadb connector.
             The goal was to create a professional looking lawn business site so I could practice developing
             webpages with Database Integration. It runs completely within Docker containers. It is also built
-            with REST API for handling http requests/responses, and CRUD API for handling user data/sessions.</p>
+            with REST API for handling http requests/responses, and CRUD API for handling user data.</p>
         <li><a href="http://arizonapomeranians.com" target="_blank">http://arizonapomeranians.com</a></li>
         <p>This was my second project, client had an old webpage they wanted me to replace with a more modern one.
             but still keep the appealing parts of it. Here I got to practice my skill with JS-DOM manipulation for the
@@ -250,7 +260,7 @@
 
 </body>
 <footer>
-    <p>This webpage was built with Java/Vertx and Docker.</p>
+    <p>This webpage runs on Java/Vertx and Docker + MySql.</p>
 </footer>
 
 <script>

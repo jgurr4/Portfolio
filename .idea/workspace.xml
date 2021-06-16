@@ -23,8 +23,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb17eeca-57b6-471c-94bd-c97bd3910a0e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/myPortfolio/HttpServerVerticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/myPortfolio/HttpServerVerticle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/myPortfolio/MariaxDevApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/myPortfolio/MariaxDevApi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/jared.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/jared.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myPortfolio/HttpServerVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myPortfolio/HttpServerVerticle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/jared.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/jared.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,17 +112,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.StartServer" />
@@ -142,7 +141,14 @@
       <workItem from="1606743291687" duration="110000" />
       <workItem from="1609968651361" duration="25000" />
       <workItem from="1609968699899" duration="2586000" />
-      <workItem from="1623519596728" duration="3382000" />
+      <workItem from="1623519596728" duration="4953000" />
+      <workItem from="1623679820684" duration="3903000" />
+      <workItem from="1623684285046" duration="3552000" />
+      <workItem from="1623727315337" duration="248000" />
+      <workItem from="1623769934983" duration="2923000" />
+      <workItem from="1623773884570" duration="29000" />
+      <workItem from="1623777957475" duration="576000" />
+      <workItem from="1623848821783" duration="2761000" />
     </task>
     <servers />
   </component>
