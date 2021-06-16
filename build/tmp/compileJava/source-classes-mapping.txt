@@ -1,8 +1,0 @@
-myPortfolio/MariadbVerticle.java
- myPortfolio.MariadbVerticle
-myPortfolio/MariaxDevApi.java
- myPortfolio.MariaxDevApi
-myPortfolio/StartServer.java
- myPortfolio.StartServer
-myPortfolio/HttpServerVerticle.java
- myPortfolio.HttpServerVerticle
