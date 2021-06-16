@@ -6,32 +6,11 @@
     overflow-x: hidden;
 }
 
-/*
-for screens 1912 pixels or larger:
-*/
-@media only screen and (min-width: 1912px) {
-    body { width: 1912px; height: 900px; }
-    #menu { font-size: 70px; color: var(--text); }
-    #content { width: 100px; }
-    #content button { margin: 10px; width: 200px; font-size: 20px; font-family: monospace; font-weight: bold; color: var(--text); background-color: var(--3); border-radius: 0px; border-color: initial; padding: 8px; }
-    #profileImg { height: 350px; width: 350px; position: absolute; top: 100px; right: 650px; border-radius: 50%; }
-    #top-section { position: absolute; top: 180px; left: 500px; }
-    .section { position: absolute; bottom: 200px; left: 950px; }
-    #contact { margin: 0px 200px 0px 100px; width: 200px; bottom: 100px; }
-    #contact input { padding: 5px; margin: 10px; width: 250px; border-radius: 40px; }
-    #portfolio { bottom: 140px; width: 700px; }
-    .techImg { position: absolute; bottom: 135px; left: 400px; width: 250px; }
-    #js { width: 160px; height: 180px; left: 450px;}
-    .techDesc { position: absolute; top: 760px; left: 150px; margin-right: 900px; }
-    .pagination a { color: black; float: left; padding: 8px 16px; text-decoration: none; transition: background-color .3s; }
-    div.pagination { position: relative; top: 5px; left: 150px; }
-    footer { position: absolute; bottom: 20px; right: 20px; }
-}
 
 /*
 for screens between 1000 and 1911px:
 */
-@media only screen and (max-width: 1912px) {
+@media only screen and (min-width: 1001px) {
     body { width: 1000px; height: 900px; }
     #menu { float: left; margin-right: 10px; font-size: 70px; color: var(--text); }
     #content { float: left; margin-top: 10px;}
@@ -43,9 +22,8 @@ for screens between 1000 and 1911px:
     #contact input { padding: 5px; margin: 10px; width: 250px; border-radius: 40px; }
     #qualifications { bottom: 185px; }
     #portfolio { font-size: 14px; bottom: 130px; width: 550px; }
-    .techImg { position: absolute; bottom: 200px; left: 130px; width: 180px; }
-    #js { width: 160px; height: 180px; }
-    .techDesc { position: absolute; top: 700px; left: 30px; width: 400px; }
+    .techImg { position: absolute; bottom: 300px; left: 130px; width: 180px; }
+    .techDesc { position: absolute; top: 600px; left: 30px; width: 400px; }
     .pagination a { color: black; float: left; padding: 8px 16px; text-decoration: none; transition: background-color .3s; }
     div.pagination { position: relative; top: 5px; left: 150px; }
     footer { position: absolute; bottom: 10px; right: 0px; }
@@ -60,16 +38,19 @@ for screens 1000 pixels or smaller:
     #menu { float: left; margin-right: 10px; font-size: 70px; color: var(--text); }
     #content { float: left; margin-top: 10px;}
     #content button { margin: 5px; width: 110px; font-size: 12px; font-family: monospace; font-weight: bold; color: var(--text); background-color: var(--3); border-radius: 0px; border-color: initial; padding: 4px; }
-    #profileImg { height: 150px; width: 150px; position: absolute; top: 120px; right: 60px; border-radius: 50%; }
+    #profileImg { height: 150px; width: 150px; position: absolute; top: 120px; right: 90px; border-radius: 50%; }
     #top-section { position: absolute; top: 100px; left: 0px; }
     .section { width: 300px; position: absolute; bottom: 10px; left: 300px; }
+    #js { width: 130px; height: 140px; }
+    #intel { width: 160px; height: 140px; }
+    #jquery { width: 160px; height: 130px; }
+    #vim { width: 160px; height: 120px; }
     #contact { margin: 0px 200px 0px 100px; width: 200px; bottom: 100px; left: 200px; }
     #contact input { padding: 5px; margin: 10px; width: 250px; border-radius: 40px; }
     #qualifications { bottom: 125px; }
-    #portfolio { bottom: 25px; width: 300px; }
-    .techImg { position: absolute; bottom: 160px; left: 60px; width: 145px; }
-    #js { width: 100px; height: 120px; }
-    .techDesc { overflow-y: auto; position: absolute; top: 550px; left: 10px; width: 250px; height: 150px; }
+    #portfolio { bottom: 0px; width: 300px; }
+    .techImg { position: absolute; bottom: 200px; left: 60px; width: 145px; }
+    .techDesc { overflow-y: auto; position: absolute; top: 510px; left: 10px; width: 250px; height: 150px; }
     .pagination a { color: black; float: left; padding: 8px 16px; text-decoration: none; transition: background-color .3s; }
     div.pagination { position: relative; top: 5px; left: 150px; }
     footer { display: none; }
@@ -136,6 +117,11 @@ button:hover, span:hover {
     color: var(--3);
 }
 
+/*button#activeButton {*/
+/*    background-color: var(--text);*/
+/*    color: var(--3);*/
+/*}*/
+
 .hideSection {
     display: none;
 }
@@ -147,7 +133,6 @@ button:hover, span:hover {
 .hideDesc {
     display: none;
 }
-
 
 .fa-github, .fa-linkedin {
     padding-left: 5px;

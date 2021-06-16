@@ -5,14 +5,15 @@
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://kit.fontawesome.com/6f406d946e.js" crossorigin="anonymous"></script>
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
 </head>
 <body>
 <span id="menu" class="noSelect">&#9728;</span>
 <div id="content" class="noSelect" style="display: block;">
-    <button onclick="replaceSection(this.value)" value="about">About me</button>
-    <button onclick="replaceSection(this.value)" value="qualifications">Qualifications</button>
-    <button onclick="replaceSection(this.value)" value="contact">Contact</button>
-    <button onclick="replaceSection(this.value)" value="portfolio">Portfolio</button>
+    <button onclick="replaceSection(this.value)" value="about" class="about">About me</button>
+    <button onclick="replaceSection(this.value)" value="qualifications" class="qualifications">Qualifications</button>
+    <button onclick="replaceSection(this.value)" value="contact" class="contact">Contact</button>
+    <button onclick="replaceSection(this.value)" value="portfolio" class="portfolio">Portfolio</button>
 </div>
 
 <img id="profileImg" class="noSelect" src="images/profile.jpg">
@@ -71,7 +72,7 @@
         <img id="couchbase" class="hideImg" src="images/Couchbase.png">
     </a>
     <a href="https://www.docker.com/" target="_blank" title="Click to see official site.">
-        <img id="docker" class="hideImg" src="images/docker.png">
+        <img id="docker" class="hideImg" src="images/docker.png" height="145">
     </a>
     <a href="https://git-scm.com/" target="_blank" title="Click to see official site.">
         <img id="git" class="hideImg" src="images/github.png">
@@ -80,7 +81,7 @@
         <img id="html" class="hideImg" src="images/HTML+CSS.png">
     </a>
     <a href="https://www.jetbrains.com/idea/" target="_blank" title="Click to see official site.">
-        <img id="intel" class="hideImg" src="images/Intellij.jpg">
+        <img id="intel" class="hideImg" src="images/Intellij.jpg" height="165">
     </a>
     <a href="https://en.wikipedia.org/wiki/Java_(programming_language)" target="_blank"
        title="Click to see official site.">
@@ -88,11 +89,11 @@
     </a>
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"
        title="Click to see official site.">
-        <img id="js" class="hideImg" src="images/JavaScript.png">
+        <img id="js" class="hideImg" src="images/JavaScript.png" height="160">
     </a>
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"
        title="Click to see official site.">
-        <img id="jquery" class="hideImg" src="images/jquery.png">
+        <img id="jquery" class="hideImg" src="images/jquery.png" height="165">
     </a>
     <a href="https://en.wikipedia.org/wiki/Linux" target="_blank" title="Click to see official site.">
         <img id="linux" class="hideImg" src="images/Linux.png">
@@ -110,7 +111,7 @@
         <img id="vertx" class="hideImg" src="images/Vertx.png">
     </a>
     <a href="https://www.vim.org/" target="_blank" title="Click to see official site.">
-        <img id="vim" class="hideImg" src="images/VIM.png">
+        <img id="vim" class="hideImg" src="images/VIM.png" height="165">
     </a>
 </div>
 
@@ -226,8 +227,8 @@
 
 <div id="portfolio" class="hideSection">
     <div id="portCont1" class="portCont">
-        <h3>Here is a list of my projects with many more on the way:</h3>
-        <li><a href="http://lawnarizonablog.com" target="_blank">http://lawnarizonablog.com</a></li>
+        <h3 style="margin-bottom:-3px">Here is a list of my projects with many more on the way:</h3>
+        <li style="margin-bottom:-5px;"><a href="http://lawnarizonablog.com" target="_blank">http://lawnarizonablog.com</a></li>
         <p>This was my very first project I ever did. Built with Node.js and MySQL/Mariadb connector.
             The goal was to create a professional looking lawn business site so I could practice developing
             webpages with Database Integration. It runs completely within Docker containers. It is also built
@@ -294,12 +295,21 @@
     }
 
     let currentSec = document.querySelector(".section")
+    // let currentActiveButton = document.getElementById("activeButton")
 
-    function replaceSection(id) {
+    function replaceSection(value) {
         currentSec.setAttribute("class", "hideSection")
-        let newSec = document.getElementById(id)
+        let newSec = document.getElementById(value)
         newSec.setAttribute("class", "section")
         currentSec = document.querySelector(".section")
+        // For some reason I cannot get this to work.
+        // let clickedButton = document.getElementsByClassName(value)
+        // if (clickedButton.getAttribute("id") === "activeButton") {
+        //     return
+        // } else {
+        //     currentActiveButton.setAttribute("id", "")
+        //     clickedButton.setAttribute("id", "activeButton")
+        // }
     }
 
     let currentPort = document.querySelector(".portCont")
@@ -329,6 +339,7 @@
             inactive = document.querySelector(".inactive")
         }
     }
+
 
 </script>
 

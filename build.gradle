@@ -17,7 +17,10 @@ ext {
 }
 
 application {
-    mainClassName = 'myPortfolio.StartServer'
+    mainClass = 'myPortfolio.StartServer'
+}
+shadow {
+    mainClassName = application.mainClass.get()
 }
 
 def watchForChange = 'src/**/*'
@@ -47,7 +50,7 @@ java {
 }
 
 shadowJar {
-    classifier = 'fat'
+    archiveClassifier.set('fat')
 }
 
 test {
