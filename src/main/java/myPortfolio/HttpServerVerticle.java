@@ -124,12 +124,15 @@ public class HttpServerVerticle extends AbstractVerticle {
                 .subscribe(e -> {
                         LOGGER.debug("HttpServer Verticle Received reply: " + e.body());
                         //TODO Ask how to get this part to successfully refresh the page...
+                            response.setStatusCode(303);
+                            response.putHeader("Location", "/static/jared.html");
+                            response.end();
                     },
                     err -> {
                         LOGGER.debug("Error communicating to MariadbVerticle. " + err.getMessage());
                         // TODO: try doing this part with only response.end and see if that successfully gets page to refresh without needing to do redirect.
                         response.setStatusCode(303);
-                        response.putHeader("Location", "/jared.html");
+                        response.putHeader("Location", "/static/jared.html");
                         response.end();
                     });
         } catch (Exception e) {

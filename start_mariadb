@@ -1,1 +1,1 @@
-docker run --rm -v ~/portfolio-extra/mysqldata:/var/lib/mysql --name mariadb -e MYSQL_ROOT_PASSWORD=super03 -d mariadb
+docker run --rm -v ~/portfolio-extra/mysqldata:/var/lib/mysql --name mariadb -e MYSQL_ROOT_PASSWORD=super03 -d mariadb/server

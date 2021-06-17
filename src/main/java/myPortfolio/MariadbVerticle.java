@@ -39,8 +39,8 @@ public class MariadbVerticle extends AbstractVerticle {
         final MySQLConnectOptions connectOptions = new MySQLConnectOptions()
                 .setPort(3306)
                 .setHost("localhost")
-                .setDatabase("contact")
-                .setUser("jared")
+                .setDatabase("portfolio")
+                .setUser("portfolio")
                 .setPassword("super03");
 
         PoolOptions poolOptions = new PoolOptions();
@@ -48,7 +48,7 @@ public class MariadbVerticle extends AbstractVerticle {
         MySQLPool client = MySQLPool.pool(vertx, connectOptions, poolOptions);
 
         client
-                .preparedQuery("INSERT INTO contacts(name, business, position, callback, phone, interview_date) values (?, ?, ?, ?, ?, ?)")
+                .preparedQuery("INSERT INTO contact(name, business, position, callback, phone, interview_date) values (?, ?, ?, ?, ?, ?)")
                 .execute(Tuple.tuple(new ArrayList(list)), ar -> {
                     if (ar.succeeded()) {
                         RowSet<Row> result = ar.result();
