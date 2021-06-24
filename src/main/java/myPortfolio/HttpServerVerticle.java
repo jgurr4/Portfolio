@@ -35,8 +35,8 @@ public class HttpServerVerticle extends AbstractVerticle {
     router.route().handler(StaticHandler.create());
     //Add a route for / to route to static/jared.html that way people don't have to type in static/jared.html
     router.get("/").handler(this::redirect);
+    router.get("/lawnpage").handler(this::redirect);
     router.get("/static/*").handler(this::staticHandler);
-//        router.get("/lawn/*").handler(this::lawnHandler);
     router.route().handler(BodyHandler.create());
     router.post("/api/contact").handler(this::busHandler);
     final int port = 8080;
@@ -56,7 +56,11 @@ public class HttpServerVerticle extends AbstractVerticle {
   private void redirect(RoutingContext context) {
     final HttpServerResponse response = context.response();
     final HttpServerRequest request = context.request();
-    response.putHeader("location", "/static/jared.html");
+    String target = "/static/jared.html";
+    if (request.path().equals("/lawnpage")) {
+      target = "http://" + request.host().replaceFirst(":.*", "") + ":8081";
+    }
+    response.putHeader("location", target);
     response.setStatusCode(302);
     response.end();
   }
@@ -123,12 +127,13 @@ public class HttpServerVerticle extends AbstractVerticle {
       final HttpServerRequest request = context.request();
       final HttpServerResponse response = context.response();
       final MultiMap params = request.params();
-
+      String dbHost = "db";
       //This puts the params from http headers into json object.
       JsonObject object = new JsonObject();
       for (Map.Entry<String, String> entry : params.entries()) {
         object.put(entry.getKey(), entry.getValue());
       }
+      object.put("host", dbHost);
 
       eb.rxRequest("mariadb", object.encode())
               .subscribe(e -> {

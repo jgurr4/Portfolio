@@ -33,12 +33,14 @@ public class MariadbVerticle extends AbstractVerticle {
     private void handleInsert(Message<String> message) {
         LOGGER.debug("MariadbVerticle received message : " + message.body());
         final JsonObject json = new JsonObject(message.body());
+        final String host = json.getString("host");
+        json.remove("host");
         final Collection list = json.getMap().values();
 /*      final String name = json.getString("name");
         final String business = json.getString("business"); */
         final MySQLConnectOptions connectOptions = new MySQLConnectOptions()
                 .setPort(3306)
-                .setHost("localhost")
+                .setHost(host)
                 .setDatabase("portfolio")
                 .setUser("portfolio")
                 .setPassword("super03");

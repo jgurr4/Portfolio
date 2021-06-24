@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: mariadb/server
+    volumes:
+      - /home/jaredgurr/portfolio-extra/mysqldata:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=super03
+    ports:
+      - "3306:3306"
+  web:
+    image: jaredsdev/nodejsapp
+    ports: 
+      - "8081:8081"
+    depends_on:
+      - db
+  java:
+    image: jaredsdev/portfolio
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db

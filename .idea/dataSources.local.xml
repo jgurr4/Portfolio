@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-211.7442.40">
-    <data-source name="contact@localhost" uuid="c8b69874-9cf7-43d6-9797-9d35c5f188a9">
-      <database-info product="MariaDB" version="10.4.13-MariaDB-1:10.4.13+maria~bionic" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="2.6.0" dbms="MARIADB" exact-version="10.4.13" exact-driver-version="2.6">
+    <data-source name="portfolio@localhost" uuid="c8b69874-9cf7-43d6-9797-9d35c5f188a9">
+      <database-info product="MariaDB" version="10.5.10-MariaDB-1:10.5.10+maria~bionic" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="2.6.0" dbms="MARIADB" exact-version="10.5.10" exact-driver-version="2.6">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-      <user-name>root</user-name>
+      <user-name>portfolio</user-name>
       <schema-mapping>
         <introspection-scope>
           <node kind="schema" qname="@" />
