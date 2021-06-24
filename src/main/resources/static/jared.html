@@ -26,11 +26,11 @@
     <p><i class="fas fa-phone"></i> +1 480 000 0000</p>
 -->
     <p><i class="fas fa-map-marker-alt"></i> 28, San Tan Valley, Arizona, United States</p>
-    <div class="noSelect">
-        <a target="_blank" href="https://linkedin.com/in/jared-gurr-173008b7" class="fa fa-linkedin"></a>
-        <a target="_blank" href="https://github.com/jgurr4/Portfolio" class="fa fa-github"></a>
-        <a target="_blank" href="https://www.codewars.com/users/Nosferatu123" class="fas fa-code" style="margin-left: .04in"></a>
-        <a target="_blank" href="https://stackoverflow.com/users/12779135/senorcardgage" class="fab fa-stack-overflow" style="margin-left: .1in"></a>
+    <div id="symbol" class="noSelect">
+        <a id="linked" target="_blank" href="https://linkedin.com/in/jared-gurr-173008b7" class="fa fa-linkedin"></a>
+        <a id="github" target="_blank" href="https://github.com/jgurr4/Portfolio" class="fa fa-github"></a>
+        <a id="codewar" target="_blank" href="https://www.codewars.com/users/Nosferatu123" class="fas fa-code"></a>
+        <a id="stack" target="_blank" href="https://stackoverflow.com/users/12779135/senorcardgage" class="fab fa-stack-overflow"></a>
     </div>
 </div>
 
@@ -60,7 +60,7 @@
     <p>Click any button above to see it's description and external links on left side.</p>
 
     <a href="resume.pdf" target="_blank" download>
-        <button class="noSelect" value="Download CV">Download CV <i class="fa fa-download"></i></button>
+        <button id="download" class="noSelect" value="Download CV">Download CV <i class="fa fa-download"></i></button>
     </a>
 </div>
 
@@ -219,7 +219,7 @@
         <input type="text" name="position" placeholder="position you're hiring for" required>
         <input type="text" name="callback" placeholder="When I should call you back" required>
         <input type="text" name="phone" placeholder="phone number" required>
-        <input type="text" name="interview_date" placeholder="(optional) day you want to do an interview">
+        <input type="text" name="interview_date" placeholder="(optional) interview date">
         <button type="submit" value="Submit">Submit</button>
     </form>
 </div>
