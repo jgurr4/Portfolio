@@ -6,16 +6,14 @@
     overflow-x: hidden;
 }
 
-/*
-for screens between 2000 and 4000px: 1920px
-*/
-@media only screen and (min-width: 1920px) {
+/*Always remember that .section applies to about, portfolio, qualification, and contact. Not just about. It is required for those to be positioned correctly.*/
+@media only screen and (min-width: 2100px) {
     body { width: 1800px; height: 1300px; }
     #menu { float: left; margin-right: 20px; font-size: 200px; color: var(--text); }
     #content { float: left; margin-top: 20px;}
     #content button { margin: 40px 20px 20px; width: 350px; font-size: 40px; font-family: monospace; font-weight: bold; color: var(--text); background-color: var(--3); border-radius: 0px; border-color: initial; padding: 10px; }
     #hello { background-color: var(--3); margin-right: 200px; border-radius: 60px; font-size: 30px; padding: 30px 30px 30px 60px; }
-    #profileImg { height: 450px; width: 450px; position: absolute; top: 300px; right: 500px; border-radius: 50%; }
+    #profileImg { height: 450px; width: 450px; position: absolute; top: 300px; left: 600px; border-radius: 50%; }
     #top-section { position: absolute; top: 300px; left: 250px; }
     #top-section h1 { font-size: 70px; }
     #top-section h3 { font-size: 40px; }
@@ -34,10 +32,10 @@ for screens between 2000 and 4000px: 1920px
     #contact input { font-size: 20px; padding: 5px; margin: 10px; width: 320px; border-radius: 60px; }
     #contact button { font-size: 17px; width: 50%; margin-left: 120px; margin-top: 10px; }
     #qualifications { top: 800px; font-size: 30px; }
-    #portfolio { font-size: 22px; top: 750px; width: 900px; }
+    #portfolio { font-size: 22px; top: 750px; left: 600px; width: 900px; }
     .pagination a { color: black; float: left; padding: .08in .16in; text-decoration: none; transition: background-color .3s; }
     div.pagination { position: relative; top: .05in; left: 1.5in; }
-    footer { position: absolute; bottom: .1in; right: 0in; }
+    footer { position: absolute; top: 1000px; right: 0px; }
     #js { width: 180px; height: 180px; left: 330px;}
     #jquery { width: 190px; height: 190px; left: 330px; top: 830px}
     #vertx { height: 160px; }
@@ -50,70 +48,118 @@ for screens between 2000 and 4000px: 1920px
     #intel { height: 200px; width: 200px; top: 840px; left: 330px; }
 }
 
+@media only screen and (min-width: 1500px) {
+    body { width: 1500px; height: 900px; }
+    #menu { float: left; margin-right: 10px; font-size: 100px; color: var(--text); }
+    #content { float: left; margin-top: 20px;}
+    #content button { margin: 10px; width: 300px; font-size: 27px; font-family: monospace; font-weight: bold; color: var(--text); background-color: var(--3); border-radius: 0px; border-color: initial; padding: 8px; }
+    #hello { background-color: var(--3); margin-right: 200px; border-radius: 50px; font-size: 20px; padding: 14px 14px 14px 45px; }
+    #profileImg { height: 300px; width: 300px; position: absolute; top: 150px; left: 700px; border-radius: 50%; }
+    #top-section { position: absolute; top: 150px; left: 150px; }
+    #top-section h1 { font-size: 45px; }
+    #top-section h3 { font-size: 30px; margin-top: 20px; }
+    #top-section p { font-size: 25px; margin-top: -5px; }
+    #symbol { font-size: 25px; }
+    #linked { margin-right: 5px; }
+    #codewar { margin-left: 10px; }
+    #stack { margin-left: 15px; }
+    .techImg { position: absolute; top: 500px; left: 200px; width: 250px; }
+    .techDesc { position: absolute; top: 650px; left: 110px; width: 520px; font-size: 20px; }
+    .section { position: absolute; top: 450px; left: 700px; }
+    #about { font-size: 21px; }
+    #buttons button { font-size: 15px; }
+    #download {font-size: 17px; }
+    #qualifications { top: 450px; font-size: 20px; }
+    #contact { margin: 0px 20px 0px 80px; width: 180px; top: 470px; }
+    #contact input { font-size: 18px; padding: 5px; margin: 10px; width: 320px; border-radius: 60px; }
+    #contact button { font-size: 17px; width: 50%; margin-left: 120px; margin-top: 10px; }
+    #portfolio { font-size: 18px; top: 470px; left: 700px; width: 750px; }
+    .pagination a { color: black; float: left; padding: .08in .16in; text-decoration: none; transition: background-color .3s; }
+    div.pagination { position: relative; top: .05in; left: 1.5in; }
+    #html { top: 530px; left: 230px; }
+    #js { width: 170px; height: 170px; top: 490px; left: 270px;}
+    #jquery { width: 170px; height: 170px; left: 270px; top: 490px}
+    #node { top: 520px; }
+    #java { top: 530px; }
+    #vertx { height: 140px; top: 520px; }
+    #rxjava { height: 140px; top: 520px; }
+    #mysql { height: 140px; top: 520px; }
+    #docker { height: 180px; top: 480px;}
+    #linux { top: 490px; }
+    #bash { top: 520px; left: 210px; }
+    #vim { height: 180px; width: 180px; top: 480px; left: 250px; }
+    #git { top: 520px; }
+    #couchbase { top: 530px; left: 230px; }
+    #intel { height: 170px; width: 170px; top: 490px; left: 250px; }
+    footer { position: absolute; top: 850px; right: 0px; }
+}
 
-/*
-for screens between 1000 and 1911px: 1920px
-*/
-@media only screen and (max-width: 1920px) {
-    body { width: 10in; height: 9in; }
+@media only screen and (max-width: 1500px) {
+    body { width: 970px; height: 900px; }
     #menu { float: left; margin-right: .1in; font-size: .8in; color: var(--text); }
     #content { float: left; margin-top: .1in;}
     #content button { margin: .1in; width: 2in; font-size: .2in; font-family: monospace; font-weight: bold; color: var(--text); background-color: var(--3); border-radius: 0in; border-color: initial; padding: .08in; }
-    #hello { background-color: var(--3); margin-right: 1in; border-radius: .5in; font-size: .16in; padding: .15in .15in .15in .5in; }
-    #profileImg { height: 3in; width: 3in; position: absolute; top: 1.5in; right: 2in; border-radius: 50%; }
-    #top-section { position: absolute; top: 1.8in; left: 1in; }
-    .section { position: absolute; bottom: 1.5in; left: 4.5in; }
+    #hello { background-color: var(--3); width: 100px; border-radius: .5in; font-size: 16px; padding: 13px 15px 13px 22px; }
+    #profileImg { height: 280px; width: 280px; position: absolute; top: 130px; left: 450px; border-radius: 50%; }
+    #top-section { position: absolute; top: 150px; left: 100px; }
+    .section { position: absolute; top: 400px; left: 450px;}
     #codewar { margin-left: .05in; }
     #stack { margin-left: .1in; }
-    #js { width: 1.6in; height: 1.6in; left: 1.2in;}
-    #jquery { width: 1.7in; height: 1.5in; }
-    #vertx { height: 1.2in; }
-    #rxjava { height: 1.2in; }
-    #vim { height: 1.6in; width: 1.8in; }
-    #intel { height: 1.6in; width: 1.8in; }
-    #contact { margin: 0in 2in 0in .64in; width: 2in; bottom: 1in; }
-    #contact input { padding: .13cm; margin: .1in; width: 2.5in; border-radius: .4in; }
+    #contact { margin: 0px 2in 0px 100px; width: 2in; top: 440px; }
+    #contact input { padding: .13cm; margin: 5px; width: 2.5in; border-radius: .4in; }
     #contact button { width: 50%; margin-left: .85in; margin-top: .05in; }
-    #qualifications { bottom: 1.85in; }
-    #portfolio { font-size: .16in; bottom: 1.3in; width: 5.5in; }
-    .techImg { position: absolute; bottom: 3in; left: 1.0in; width: 2.2in; }
+    #qualifications { top: 420px; }
+    #portfolio { font-size: 14px; top: 430px; left: 450px; width: 5.5in; }
+    .techImg { position: absolute; top: 450px; left: 100px; width: 2.2in; }
     .techDesc { position: absolute; top: 6in; left: .3in; width: 4in; }
     .pagination a { color: black; float: left; padding: .08in .16in; text-decoration: none; transition: background-color .3s; }
     div.pagination { position: relative; top: .05in; left: 1.5in; }
-    footer { position: absolute; bottom: .1in; right: 0in; }
+    #js { width: 1.6in; height: 1.6in; top: 430px; left: 120px;}
+    #jquery { width: 1.7in; height: 1.5in; top: 430px; left: 120px; }
+    #vertx { height: 1.2in; }
+    #rxjava { height: 1.2in; }
+    #docker { top: 430px; left: 100px; }
+    #linux { top: 430px; }
+    #vim { height: 1.6in; width: 1.8in; top: 430px; left: 120px; }
+    #couchbase { height: 120px;}
+    #intel { height: 1.6in; width: 1.8in; top: 430px; left: 120px; }
+    #mysql { top: 430px; }
+    footer { position: absolute; top: 765px; right: 0px; }
 }
 
-/*
-for screens 1000 pixels or smaller:
-*/
 @media only screen and (max-width: 10in) {
     :root { overflow-x: auto; }
-    body { width: 6in; height: 7.4in; }
+    body { width: 600px; height: 750px; }
     #menu { float: left; margin-right: .1in; font-size: .7in; color: var(--text); }
     #content { float: left; margin-top: .1in;}
-    #content button { margin: .04in; margin-top: .15in; width: 1.2in; font-size: .13in; font-family: monospace; font-weight: bold; color: var(--text); background-color: var(--3); border-radius: 0in; border-color: initial; padding: .04in; }
-    #hello { background-color: var(--3); margin-right: 1in; border-radius: .5in; font-size: .16in; padding: .15in .15in .15in .5in; }
-    #profileImg { height: 2.0in; width: 2.0in; position: absolute; top: 1.2in; right: .9in; border-radius: 50%; }
+    #content button { margin: .04in; margin-top: .15in; width: 110px; font-size: 12px; font-family: monospace; font-weight: bold; color: var(--text); background-color: var(--3); border-radius: 0in; border-color: initial; padding: .04in; }
+    #hello { background-color: var(--3); width: 110px; border-radius: .5in; font-size: 16px; padding: 13px 10px 13px 30px; }
+    #profileImg { height: 2.0in; width: 2.0in; position: absolute; top: 1.2in; left: 330px; border-radius: 50%; }
     #top-section { position: absolute; top: 1in; left: 0in; }
-    .section { width: 3in; position: absolute; bottom: .1in; left: 3in; }
-    .section h4 { font-size: .14in; }
+    .section { top: 300px; left: 300px; width: 300px; position: absolute; }
+    #about h3 { margin-bottom: -15px; }
+    #about h4 { font-size: 13px; }
     #buttons button { font-size: .12in; }
-    #js { width: 1.3in; height: 1.4in; left: .4in;}
-    #intel { width: 1.6in; height: 1.4in; }
-    #jquery { width: 1.6in; height: 1.3in; }
-    #rxjava { height: 1in;}
-    #vim { width: 1.6in; height: 1.2in; }
-    #contact { margin: 0in 2in 0in 1in; width: 2in; bottom: 1in; left: 2in; }
+    #about p { font-size: 13px; margin-bottom: 5px; }
+    #qualifications { top: 300px; }
+    #contact { margin: 0in 2in 0in 1in; width: 2in; top: 330px; left: 2in; }
     #contact input { padding: .03in; margin: .07in; width: 2.5in; border-radius: .40in; }
     #contact button { width: 50%; margin-left: .85in; margin-top: .05in; }
-    #qualifications { bottom: 1in; }
-    #portfolio { bottom: 0in; width: 3in; }
+    #portfolio { top: 300px; left: 300px; width: 300px; }
     #portfolio p, li { font-size: .14in; }
-    .techImg { position: absolute; bottom: 2.3in; left: .3in; width: 2.0in; }
-    .techDesc { position: absolute; top: 5.1in; left: .1in; width: 2.5in; height: 1.5in; }
+    .techImg { position: absolute; top: 380px; left: .3in; width: 2.0in; }
+    .techDesc { position: absolute; top: 5.1in; left: .1in; font-size: 14px; width: 2.5in; height: 1.5in; }
     .pagination a { color: black; float: left; padding: .08in .16in; text-decoration: none; transition: background-color .3s; }
     div.pagination { position: relative; top: .05in; left: 1.5in; }
-    footer { display: none; }
+    #js { width: 130px; height: 140px; top: 360px; left: 60px;}
+    #jquery { width: 1.6in; height: 1.3in; top: 370px; left: 50px; }
+    #docker { width: 150px; height: 140px; top: 360px; left: 40px; }
+    #linux { top: 365px; left: 30px; }
+    #vim { top: 370px; left: 45px; width: 1.6in; height: 1.2in; }
+    #intel { top: 360px; left: 45px; width: 1.6in; height: 1.4in; }
+    #mysql { top: 360px; left: 15px; }
+    #rxjava { height: 1in;}
+    footer { top: 720px; right: 0px; font-size: 12px; }
 }
 
 
