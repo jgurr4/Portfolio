@@ -23,9 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb17eeca-57b6-471c-94bd-c97bd3910a0e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/jared.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/jared.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +121,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Portfolio [shadowJar]">
+  <component name="RunManager" selected="Application.StartServer">
     <configuration name="StartServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="myPortfolio.StartServer" />
       <module name="Portfolio.main" />
@@ -237,7 +237,10 @@
       <workItem from="1624454781354" duration="14746000" />
       <workItem from="1624564535473" duration="7735000" />
       <workItem from="1624665353206" duration="8895000" />
-      <workItem from="1624725271392" duration="2919000" />
+      <workItem from="1624725271392" duration="3215000" />
+      <workItem from="1625091534806" duration="1239000" />
+      <workItem from="1625155067146" duration="989000" />
+      <workItem from="1625194582406" duration="963000" />
     </task>
     <servers />
   </component>
