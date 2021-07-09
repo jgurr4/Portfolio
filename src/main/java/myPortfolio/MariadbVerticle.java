@@ -15,9 +15,10 @@ import io.vertx.reactivex.core.*;
 import io.vertx.reactivex.core.eventbus.EventBus;
 import io.vertx.reactivex.core.eventbus.Message;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
+import java.util.Properties;
 
 public class MariadbVerticle extends AbstractVerticle {
 
@@ -31,19 +32,32 @@ public class MariadbVerticle extends AbstractVerticle {
     }
 
     private void handleInsert(Message<String> message) {
+
         LOGGER.debug("MariadbVerticle received message : " + message.body());
         final JsonObject json = new JsonObject(message.body());
         final String host = json.getString("host");
         json.remove("host");
         final Collection list = json.getMap().values();
-/*      final String name = json.getString("name");
-        final String business = json.getString("business"); */
+        final Properties propConfig = new Properties();
+        try {
+            propConfig.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        final String myEmail = propConfig.getProperty("myEmail");
+        final JsonObject ebEntries = json.copy();
+        ebEntries.put("myEmail", myEmail);
+        vertx.eventBus().rxRequest("email", ebEntries);
+
+        final String database = propConfig.getProperty("database");
+        final String user = propConfig.getProperty("user");
+        final String password = propConfig.getProperty("password");
         final MySQLConnectOptions connectOptions = new MySQLConnectOptions()
                 .setPort(3306)
                 .setHost(host)
-                .setDatabase("portfolio")
-                .setUser("portfolio")
-                .setPassword("super03");
+                .setDatabase(database)
+                .setUser(user)
+                .setPassword(password);
 
         PoolOptions poolOptions = new PoolOptions();
 

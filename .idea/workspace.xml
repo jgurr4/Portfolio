@@ -23,8 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb17eeca-57b6-471c-94bd-c97bd3910a0e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/howto" beforeDir="false" afterPath="$PROJECT_DIR$/howto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myPortfolio/HttpServerVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myPortfolio/HttpServerVerticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myPortfolio/MariadbVerticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myPortfolio/MariadbVerticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/myPortfolio/StartServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/myPortfolio/StartServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/jared.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/jared.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +67,12 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Portfolio" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Portfolio" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="shadow" type="c8890929:TasksNode$1" />
               </path>
             </expand>
@@ -74,13 +85,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="JupyterTrust" id="ec00b6a2-31ae-463d-a226-1a9c0ec37ac9" />
   <component name="ProjectId" id="1jPuudqUyAOZkDju8alVyXYdmVj" />
@@ -110,7 +129,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="ReactorSettings">
@@ -167,6 +186,27 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="Portfolio [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="Portfolio [shadowJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -192,6 +232,7 @@
       <list>
         <item itemvalue="Gradle.Portfolio [shadowJar]" />
         <item itemvalue="Gradle.Portfolio [build]" />
+        <item itemvalue="Gradle.Portfolio [clean]" />
         <item itemvalue="Application.StartServer" />
       </list>
     </recent_temporary>
@@ -240,7 +281,9 @@
       <workItem from="1624725271392" duration="3215000" />
       <workItem from="1625091534806" duration="1239000" />
       <workItem from="1625155067146" duration="989000" />
-      <workItem from="1625194582406" duration="963000" />
+      <workItem from="1625194582406" duration="2047000" />
+      <workItem from="1625254875327" duration="10000" />
+      <workItem from="1625854556544" duration="9137000" />
     </task>
     <servers />
   </component>
@@ -258,5 +301,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

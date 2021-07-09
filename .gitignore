@@ -1,3 +1,4 @@
 **/mysqldata
 **/.gradle
 **/build
+**/config.properties

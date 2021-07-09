@@ -33,7 +33,6 @@ public class HttpServerVerticle extends AbstractVerticle {
 
     Router router = Router.router(vertx);
     router.route().handler(StaticHandler.create());
-    //Add a route for / to route to static/jared.html that way people don't have to type in static/jared.html
     router.get("/").handler(this::redirect);
     router.get("/lawnpage").handler(this::redirect);
     router.get("/static/*").handler(this::staticHandler);

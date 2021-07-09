@@ -1,5 +1,6 @@
-To view this app when it's running type this in the web browser url:
-http://localhost:8081/static/jared.html
+To view this app when on local machine browser when it's running type this in the web browser url:
+http://localhost:8080/static/jared.html
+But if you run on server it will be port 8081 because I used iptables to change from 8080 to 8081.
 
 To update this app for the server:
 Recreate FatJar:
@@ -7,7 +8,7 @@ Recreate FatJar:
 // Or if that fails just use shadowjar command in intellij
 
 Update the local docker image:
-docker build -t jaredsdev/portfolio
+docker build -t jaredsdev/portfolio .
 
 Update remote docker image:
 docker push jaredsdev/portfolio
@@ -20,3 +21,7 @@ docker-compose up -d
 
 What host to connect to when using docker-compose:
 Whatever the name of the service is that contains your db image in docker-compose. See mariadbVerticle and HttpServerVerticle for our hostname.
+
+To Setup app for first time on new machine:
+vi resources/config.properties
+    -> Inside this file put database = dbname  user = username  and password = password
