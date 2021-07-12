@@ -1,4 +1,6 @@
-**/mysqldata
-**/.gradle
-**/build
-**/config.properties
+mysqldata
+.gradle
+build
+config.properties
+.idea
+*.sw*
