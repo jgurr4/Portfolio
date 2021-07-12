@@ -127,7 +127,6 @@ public class HttpServerVerticle extends AbstractVerticle {
       final HttpServerResponse response = context.response();
       final MultiMap params = request.params();
       String dbHost = "db";
-      //This puts the params from http headers into json object.
       JsonObject object = new JsonObject();
       for (Map.Entry<String, String> entry : params.entries()) {
         object.put(entry.getKey(), entry.getValue());
@@ -137,14 +136,12 @@ public class HttpServerVerticle extends AbstractVerticle {
       eb.rxRequest("mariadb", object.encode())
               .subscribe(e -> {
                         LOGGER.debug("HttpServer Verticle Received reply: " + e.body());
-                        //TODO Ask how to get this part to successfully refresh the page...
                         response.setStatusCode(303);
                         response.putHeader("Location", "/static/jared.html");
                         response.end();
                       },
                       err -> {
                         LOGGER.debug("Error communicating to MariadbVerticle. " + err.getMessage());
-                        // TODO: try doing this part with only response.end and see if that successfully gets page to refresh without needing to do redirect.
                         response.setStatusCode(303);
                         response.putHeader("Location", "/static/jared.html");
                         response.end();
