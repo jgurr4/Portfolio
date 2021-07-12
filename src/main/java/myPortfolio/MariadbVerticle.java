@@ -47,8 +47,6 @@ public class MariadbVerticle extends AbstractVerticle {
 
     LOGGER.debug("MariadbVerticle received message : " + message.body());
     final JsonObject json = new JsonObject(message.body());
-    final String host = json.getString("host");
-    json.remove("host");
     final Collection list = json.getMap().values();
     final Properties propConfig = new Properties();
     try {
@@ -56,6 +54,8 @@ public class MariadbVerticle extends AbstractVerticle {
     } catch (IOException e) {
       e.printStackTrace();
     }
+/*  This is only needed for EmailVerticle which I turned off until I can figure out how to setup smtp server in practical way on server.
+    // I will use slack API instead of this for now.
     final String myEmail = propConfig.getProperty("myEmail");
     final JsonObject ebEntries = json.copy();
     ebEntries.put("myEmail", myEmail);
@@ -66,13 +66,15 @@ public class MariadbVerticle extends AbstractVerticle {
       err -> {
       LOGGER.debug("Error communicating to EmailVerticle. " + err.getMessage());
       });
+*/
 
+    final String host = propConfig.getProperty("host");
     final String database = propConfig.getProperty("database");
     final String user = propConfig.getProperty("user");
     final String password = propConfig.getProperty("password");
     final MySQLConnectOptions connectOptions = new MySQLConnectOptions()
       .setPort(3306)
-      .setHost(host)  //change to localhost for tests on local machine.
+      .setHost(host)
       .setDatabase(database)
       .setUser(user)
       .setPassword(password);

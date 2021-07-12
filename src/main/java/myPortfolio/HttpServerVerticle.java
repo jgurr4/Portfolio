@@ -126,12 +126,10 @@ public class HttpServerVerticle extends AbstractVerticle {
       final HttpServerRequest request = context.request();
       final HttpServerResponse response = context.response();
       final MultiMap params = request.params();
-      String dbHost = "db";
       JsonObject object = new JsonObject();
       for (Map.Entry<String, String> entry : params.entries()) {
         object.put(entry.getKey(), entry.getValue());
       }
-      object.put("host", dbHost);
 
       eb.rxRequest("mariadb", object.encode())
               .subscribe(e -> {
