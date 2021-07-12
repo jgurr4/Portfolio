@@ -1,7 +1,11 @@
 package myPortfolio;
 
+import io.reactivex.Completable;
 import io.vertx.core.json.JsonObject;
 import io.vertx.mysqlclient.MySQLConnectOptions;
+import io.vertx.reactivex.core.AbstractVerticle;
+import io.vertx.reactivex.core.eventbus.EventBus;
+import io.vertx.reactivex.core.eventbus.Message;
 import io.vertx.reactivex.core.file.FileSystem;
 import io.vertx.reactivex.mysqlclient.MySQLPool;
 import io.vertx.reactivex.sqlclient.Row;
@@ -11,12 +15,6 @@ import io.vertx.sqlclient.PoolOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import io.reactivex.*;
-import io.vertx.reactivex.core.*;
-import io.vertx.reactivex.core.eventbus.EventBus;
-import io.vertx.reactivex.core.eventbus.Message;
-
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -54,11 +52,11 @@ public class MariadbVerticle extends AbstractVerticle {
     } catch (IOException e) {
       e.printStackTrace();
     }
-/*  This is only needed for EmailVerticle which I turned off until I can figure out how to setup smtp server in practical way on server.
-    // I will use slack API instead of this for now.
     final String myEmail = propConfig.getProperty("myEmail");
+    final String emailPass = propConfig.getProperty("emailPass");
     final JsonObject ebEntries = json.copy();
     ebEntries.put("myEmail", myEmail);
+    ebEntries.put("emailPass", emailPass);
     vertx.eventBus().rxRequest("email", ebEntries.encode())
     .subscribe(e -> {
       LOGGER.debug("MariadbVerticle received reply: " + e.body());
@@ -66,7 +64,6 @@ public class MariadbVerticle extends AbstractVerticle {
       err -> {
       LOGGER.debug("Error communicating to EmailVerticle. " + err.getMessage());
       });
-*/
 
     final String host = propConfig.getProperty("host");
     final String database = propConfig.getProperty("database");

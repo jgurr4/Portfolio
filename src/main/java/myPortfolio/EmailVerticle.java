@@ -2,7 +2,9 @@ package myPortfolio;
 
 import io.reactivex.Completable;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.mail.LoginOption;
 import io.vertx.ext.mail.MailMessage;
+import io.vertx.ext.mail.StartTLSOptions;
 import io.vertx.reactivex.core.AbstractVerticle;
 import io.vertx.ext.mail.MailConfig;
 import io.vertx.reactivex.core.eventbus.EventBus;
@@ -10,6 +12,9 @@ import io.vertx.reactivex.core.eventbus.Message;
 import io.vertx.reactivex.ext.mail.MailClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Set;
+import java.util.TreeSet;
 
 public class EmailVerticle extends AbstractVerticle {
 
@@ -26,21 +31,26 @@ public class EmailVerticle extends AbstractVerticle {
 
     LOGGER.debug("EmailVerticle received message : " + message.body());
     final JsonObject json = new JsonObject(message.body());
+    final String myEmail = json.getString("myEmail");
+    final String emailPass = json.getString("pass");
     MailConfig config = new MailConfig();
     config.setKeepAlive(false);
-    MailClient mailClient = MailClient
-      .create(vertx, config);
+    config.setHostname("smtp.siteprotect.com")
+      .setUsername(myEmail)
+      .setPassword(emailPass)
+      .setPort(587);
+    MailClient mailClient = MailClient.create(vertx, config);
     MailMessage mailMessage = new MailMessage();
-    mailMessage.setFrom("user@jaredgurr.com (Portfolio Page)");
-    mailMessage.setTo(json.getString("myEmail"));
-    mailMessage.setText("Someone has submitted a request for contact on porfolio page.");
-    mailMessage.setHtml("name: " + json.getString("name") +
-      "\nbusiness: " + json.getString("business") +
-      "\nposition: " + json.getString("position") +
-      "\ncallback: " + json.getString("callback") +
-      "\nphone: " + json.getString("phone") +
-      "\ninterview_date: " + json.getString("interview_date")
-    );
+    mailMessage.setFrom(myEmail)
+      .setTo(myEmail)
+      .setText("Someone has submitted a request for contact on porfolio page.")
+      .setHtml("name: " + json.getString("name") +
+        "\nbusiness: " + json.getString("business") +
+        "\nposition: " + json.getString("position") +
+        "\ncallback: " + json.getString("callback") +
+        "\nphone: " + json.getString("phone") +
+        "\ninterview_date: " + json.getString("interview_date")
+      );
 
     mailClient.rxSendMail(mailMessage)
       .subscribe(e -> {
