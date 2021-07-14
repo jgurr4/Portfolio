@@ -47,7 +47,7 @@ What host to connect to when using docker-compose:
 Whatever the name of the service is that contains your db image in docker-compose. See mariadbVerticle and HttpServerVerticle for our hostname.
 
 ~~~
-To Setup app for first time on new machine:
+To Setup app for first time on new machine: (Skip this if using fatjar or pulling custom image from dockerhub.)
  -> vi resources/config.properties
 
 Inside this file put:
@@ -59,4 +59,5 @@ myEmail = email
 emailPass = emailPassword
 
 // change db to localhost for test without docker-compose.
+
 ~~~

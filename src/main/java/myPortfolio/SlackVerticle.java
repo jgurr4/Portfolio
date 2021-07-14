@@ -27,14 +27,12 @@ public class SlackVerticle extends AbstractVerticle {
     LOGGER.debug("SlackVerticle received message : " + message.body());
     final JsonObject json = new JsonObject(message.body());
     Slack slack = Slack.getInstance();
-    String token = System.getenv("SLACK_TOKEN");
+    String token = json.getString("slackToken");
 
-// Initialize an API Methods client with the given token
     MethodsClient methods = slack.methods(token);
 
-// Build a request object
     ChatPostMessageRequest request = ChatPostMessageRequest.builder()
-      .channel("portfoliocontact") // Use a channel ID `C1234567` is preferrable
+      .channel("portfoliocontact")
       .text("name: " + json.getString("name") +
         "\nbusiness: " + json.getString("business") +
         "\nposition: " + json.getString("position") +
@@ -43,7 +41,6 @@ public class SlackVerticle extends AbstractVerticle {
         "\ninterview_date: " + json.getString("interview_date"))
       .build();
 
-// Get a response as a Java object
     try {
       ChatPostMessageResponse response = methods.chatPostMessage(request);
     } catch (Exception err) {

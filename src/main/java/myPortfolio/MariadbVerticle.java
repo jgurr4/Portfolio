@@ -52,6 +52,7 @@ public class MariadbVerticle extends AbstractVerticle {
     } catch (IOException e) {
       e.printStackTrace();
     }
+    json.put("slackToken", propConfig.getProperty("slackToken"));
     vertx.eventBus().rxRequest("slack", json.encode())
       .subscribe(e -> {
           LOGGER.debug("MariadbVerticle received reply: " + e.body());
