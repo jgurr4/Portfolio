@@ -1,20 +1,17 @@
 package myPortfolio;
 
-import io.reactivex.Completable;
+import io.reactivex.rxjava3.core.Completable;
 import io.vertx.core.json.JsonObject;
-import io.vertx.ext.mail.LoginOption;
 import io.vertx.ext.mail.MailMessage;
 import io.vertx.ext.mail.StartTLSOptions;
-import io.vertx.reactivex.core.AbstractVerticle;
+import io.vertx.rxjava3.core.AbstractVerticle;
 import io.vertx.ext.mail.MailConfig;
-import io.vertx.reactivex.core.eventbus.EventBus;
-import io.vertx.reactivex.core.eventbus.Message;
-import io.vertx.reactivex.ext.mail.MailClient;
+import io.vertx.rxjava3.core.eventbus.EventBus;
+import io.vertx.rxjava3.core.eventbus.Message;
+import io.vertx.rxjava3.ext.mail.MailClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Set;
-import java.util.TreeSet;
 
 public class EmailVerticle extends AbstractVerticle {
 
@@ -34,11 +31,13 @@ public class EmailVerticle extends AbstractVerticle {
     final String myEmail = json.getString("myEmail");
     final String emailPass = json.getString("pass");
     MailConfig config = new MailConfig();
-    config.setKeepAlive(false);
     config.setHostname("smtp.siteprotect.com")
+      .setPort(587)
+      .setStarttls(StartTLSOptions.REQUIRED)
+      .setAuthMethods("PLAIN")
       .setUsername(myEmail)
       .setPassword(emailPass)
-      .setPort(587);
+      .setKeepAlive(false);
     MailClient mailClient = MailClient.create(vertx, config);
     MailMessage mailMessage = new MailMessage();
     mailMessage.setFrom(myEmail)

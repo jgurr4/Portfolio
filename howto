@@ -22,7 +22,17 @@ docker-compose up -d
 What host to connect to when using docker-compose:
 Whatever the name of the service is that contains your db image in docker-compose. See mariadbVerticle and HttpServerVerticle for our hostname.
 
+~~~
 To Setup app for first time on new machine:
-vi resources/config.properties
-    -> Inside this file put host = db  database = dbname  user = username  password = password  and myEmail = email
-    // change db to localhost for test without docker-compose.
+ -> vi resources/config.properties
+
+Inside this file put:
+host = db
+database = dbname
+user = username
+password = password
+myEmail = email
+emailPass = emailPassword
+
+// change db to localhost for test without docker-compose.
+~~~

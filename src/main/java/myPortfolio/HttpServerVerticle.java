@@ -5,21 +5,20 @@ import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import io.vertx.reactivex.core.buffer.Buffer;
-import io.vertx.reactivex.ext.web.handler.StaticHandler;
+import io.reactivex.rxjava3.annotations.Nullable;
+import io.reactivex.rxjava3.core.Completable;
+import io.reactivex.rxjava3.core.Single;
+import io.vertx.rxjava3.core.buffer.Buffer;
+import io.vertx.rxjava3.ext.web.handler.StaticHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import io.vertx.reactivex.core.Vertx.*;
-import io.reactivex.*;
-import io.reactivex.annotations.Nullable;
 import io.vertx.core.json.JsonObject;
-import io.vertx.reactivex.*;
-import io.vertx.reactivex.core.*;
-import io.vertx.reactivex.core.http.*;
-import io.vertx.reactivex.ext.web.*;
-import io.vertx.reactivex.ext.web.handler.BodyHandler;
-import io.vertx.reactivex.core.eventbus.EventBus;
+import io.vertx.rxjava3.core.*;
+import io.vertx.rxjava3.core.http.*;
+import io.vertx.rxjava3.ext.web.*;
+import io.vertx.rxjava3.ext.web.handler.BodyHandler;
+import io.vertx.rxjava3.core.eventbus.EventBus;
 
 
 public class HttpServerVerticle extends AbstractVerticle {
