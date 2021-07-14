@@ -52,6 +52,14 @@ public class MariadbVerticle extends AbstractVerticle {
     } catch (IOException e) {
       e.printStackTrace();
     }
+    vertx.eventBus().rxRequest("slack", json.encode())
+      .subscribe(e -> {
+          LOGGER.debug("MariadbVerticle received reply: " + e.body());
+        },
+        err -> {
+          LOGGER.debug("Error communicating to SlackVerticle. " + err.getMessage());
+        });
+/*
     final String myEmail = propConfig.getProperty("myEmail");
     final String emailPass = propConfig.getProperty("emailPass");
     final JsonObject ebEntries = json.copy();
@@ -64,6 +72,7 @@ public class MariadbVerticle extends AbstractVerticle {
         err -> {
           LOGGER.debug("Error communicating to EmailVerticle. " + err.getMessage());
         });
+*/
 
     final String host = propConfig.getProperty("host");
     final String database = propConfig.getProperty("database");

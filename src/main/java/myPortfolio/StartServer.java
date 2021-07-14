@@ -22,7 +22,8 @@ public class StartServer {
         vertx = Vertx.vertx(options);
         vertx.deployVerticle(new HttpServerVerticle());
         vertx.deployVerticle(new MariadbVerticle());
-        vertx.deployVerticle(new EmailVerticle());
+//        vertx.deployVerticle(new EmailVerticle());
+        vertx.deployVerticle(new SlackVerticle());
 
     }
 

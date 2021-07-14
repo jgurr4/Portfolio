@@ -2,6 +2,7 @@ package myPortfolio;
 
 import io.reactivex.rxjava3.core.Completable;
 import io.vertx.core.json.JsonObject;
+import io.vertx.ext.mail.LoginOption;
 import io.vertx.ext.mail.MailMessage;
 import io.vertx.ext.mail.StartTLSOptions;
 import io.vertx.rxjava3.core.AbstractVerticle;
@@ -31,16 +32,19 @@ public class EmailVerticle extends AbstractVerticle {
     final String myEmail = json.getString("myEmail");
     final String emailPass = json.getString("pass");
     MailConfig config = new MailConfig();
-    config.setHostname("smtp.siteprotect.com")
+    config
+      .setHostname("smtp.gmail.com")
       .setPort(587)
       .setStarttls(StartTLSOptions.REQUIRED)
       .setAuthMethods("PLAIN")
       .setUsername(myEmail)
       .setPassword(emailPass)
+      .setOwnHostname("smtp.gmail.com")
       .setKeepAlive(false);
     MailClient mailClient = MailClient.create(vertx, config);
     MailMessage mailMessage = new MailMessage();
-    mailMessage.setFrom(myEmail)
+    mailMessage
+      .setFrom(myEmail)
       .setTo(myEmail)
       .setText("Someone has submitted a request for contact on porfolio page.")
       .setHtml("name: " + json.getString("name") +
