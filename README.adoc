@@ -4,7 +4,6 @@ I have links to each of my past projects on my portfolio page. Please check ther
 
 If you would like to see each projects source files, then just use these links below:
 
-
 Wilderness Create webpage source files:
 https://github.com/jgurr4/phptest
 
@@ -20,44 +19,56 @@ https://github.com/jgurr4/lawnWebpage
 Arizona Pomeranians webpages source:
 https://github.com/jgurr4/arizonaPomeranians
 
+---
+====
 
-
-To view this app when on local machine browser when it's running type this in the web browser url:
+To view this app on local machine browser type this in the web browser url:
 http://localhost:8080/static/jared.html
-But if you run on server it will be port 8081 because I used iptables to change from 8080 to 8081.
 
-To update this app for the server:
-Recreate FatJar:
-./gradlew shadowjar
-// Or if that fails just use shadowjar command in intellij
+To view this app on server it will be port 8081 because I used iptables to change from 8080 to 8081.
 
-Update the local docker image:
+To update this app for the server just recreate the FatJar:
+```
+./gradlew shadowjar     // Or if this fails just use shadowjar command in intellij
+```
+
+Next update the local docker image:
+```
 docker build -t jaredsdev/portfolio .
+```
 
-Update remote docker image:
+Then update remote docker image:
+```
 docker push jaredsdev/portfolio
+```
 
 On the Server End: (make sure all containers are stopped and removed)
+```
 docker pull jaredsdev/portfolio
+```
 
 To run the app:
+```
 docker-compose up -d
+```
 
 What host to connect to when using docker-compose:
 Whatever the name of the service is that contains your db image in docker-compose. See mariadbVerticle and HttpServerVerticle for our hostname.
 
-~~~
+
 To Setup app for first time on new machine: (Skip this if using fatjar or pulling custom image from dockerhub.)
- -> vi resources/config.properties
+```
+vi resources/config.properties
+```
 
 Inside this file put:
-host = db
+```
+host = db       // change db to localhost for test without docker-compose.
 database = dbname
 user = username
 password = password
 myEmail = email
 emailPass = emailPassword
+```
 
-// change db to localhost for test without docker-compose.
 
-~~~
