@@ -25,6 +25,7 @@ public class HttpTests {
   private static final Logger LOGGER = LoggerFactory.getLogger(HttpTests.class);
 
   // TODO: Finish implementing test.
+/*
   @Test
   public void testServerUserRegister(Vertx vertx, VertxTestContext context) throws IOException {
 
@@ -39,6 +40,7 @@ public class HttpTests {
     System.out.println(httpCon.getResponseCode());
     System.out.println(httpCon.getResponseMessage());
     out.close();
+*/
 /*
     HttpClient client = vertx.createHttpClient();
     HttpClientRequest request = client
@@ -49,6 +51,8 @@ public class HttpTests {
     request.putHeader("content-type", "application/x-www-form-urlencoded");
     request.write(body);
     request.end();
-*/
+*//*
+
   }
+*/
 }

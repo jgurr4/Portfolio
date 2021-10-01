@@ -231,15 +231,20 @@
         <h3 style="margin-bottom:-.03in">Here is a list of my projects with many more on the way:</h3>
         <li style="margin-bottom:-.05in;"><a href="/lawnpage" target="_blank">Lawn App</a></li>
         <p>This was my very first project I ever did. Built with Node.js and MySQL/Mariadb connector.
-            The goal was to create a professional looking lawn business site so I could practice developing
+            The goal was to create a professional looking lawn care business site so I could practice developing
             webpages with Database Integration. It runs completely within Docker containers. It is also built
             with REST API for handling http requests/responses, and CRUD API for handling user data.</p>
-        <li><a href="http://arizonapomeranians.com" target="_blank">http://arizonapomeranians.com</a></li>
+        <li><a href="/med_dissector" target="_blank">Medical Term Dissector</a></li>
+        <p>This is a simple webpage, but the magic occurs behind the scenes. This page takes any medical term
+        which you give it, and it dissects the word into smaller parts explaining what each part means in context
+        of a medical roots, prefix and suffix table. It is built with a fully functioning REST api inside Spring-Boot
+            using MySQL and Hibernate ORM.</p>
+    </div>
+    <div id="portCont2" class="hidePort">
+        <li><a href="http://arizonapomeranians.com" target="_blank">Arizona Pomeranians</a></li>
         <p>This was my second project, client had an old webpage they wanted me to replace with a more modern one.
             but still keep the appealing parts of it. Here I got to practice my skill with JS-DOM manipulation for the
             pictures.</p>
-    </div>
-    <div id="portCont2" class="hidePort">
         <li>CrawlWebpage:</li>
         <p>This is currently my most ambitious project. It is a work in progress and it's a group effort
             with me and two other developers. It's basically a video game you play in your browser based on the online
@@ -305,7 +310,7 @@
         let newSec = document.getElementById(value)
         newSec.setAttribute("class", "section")
         currentSec = document.querySelector(".section")
-        // For some reason I cannot get this to work.
+        // For some reason I cannot get this to work. UPDATE: Just do document.querySelector instead and replace (value) with (`${value}`)
         // let clickedButton = document.getElementsByClassName(value)
         // if (clickedButton.getAttribute("id") === "activeButton") {
         //     return

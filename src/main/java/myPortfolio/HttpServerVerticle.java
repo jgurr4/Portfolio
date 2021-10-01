@@ -34,6 +34,7 @@ public class HttpServerVerticle extends AbstractVerticle {
     router.route().handler(StaticHandler.create());
     router.get("/").handler(this::redirect);
     router.get("/lawnpage").handler(this::redirect);
+    router.get("/med_dissector").handler(this::redirect);
     router.get("/static/*").handler(this::staticHandler);
     router.route().handler(BodyHandler.create());
     router.post("/api/contact").handler(this::busHandler);
@@ -57,6 +58,8 @@ public class HttpServerVerticle extends AbstractVerticle {
     String target = "/static/jared.html";
     if (request.path().equals("/lawnpage")) {
       target = "http://" + request.host().replaceFirst(":.*", "") + ":8081";
+    } else if (request.path().equals("/med_dissector")) {
+      target = "http://" + request.host().replaceFirst(":.*", "") + ":8082";
     }
     response.putHeader("location", target);
     response.setStatusCode(302);

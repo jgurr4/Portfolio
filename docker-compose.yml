@@ -20,3 +20,9 @@ services:
       - "8080:8080"
     depends_on:
       - db
+  spring:
+    image: jaredsdev/med_dissector
+    ports:
+      - "8082:8082"
+    depends_on:
+      - db
