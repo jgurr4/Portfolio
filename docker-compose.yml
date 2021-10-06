@@ -1,26 +1,31 @@
 version: '3'
 services:
   db:
+    container_name: mariadb
     image: mariadb/server
     volumes:
       - /home/jaredgurr/portfolio-extra/mysqldata:/var/lib/mysql
+      - /home/jaredgurr/Master/scripts/mysqlScripts:/mysqlScripts
     environment:
-      - MYSQL_ROOT_PASSWORD=super03
+      - MYSQL_ROOT_PASSWORD=$pass
     ports:
       - "3306:3306"
   web:
+    container_name: lawn
     image: jaredsdev/nodejsapp
     ports: 
       - "8081:8081"
     depends_on:
       - db
   java:
+    container_name: portfolio
     image: jaredsdev/portfolio
     ports:
       - "8080:8080"
     depends_on:
       - db
   spring:
+    container_name: dissector
     image: jaredsdev/med_dissector
     ports:
       - "8082:8082"

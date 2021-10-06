@@ -35,7 +35,15 @@ public class MariaxDevApi extends AbstractVerticle {
         final String phone = json.getString("phone");
         final String interview_date = json.getString("interview_date");
 
-        final Session mySession = new SessionFactory().getSession("mysqlx://localhost:3306/test?user=root&password=super03");
+    try {
+      propConfig.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties"));
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    final String pass = propConfig.getProperty("password");
+
+        final Session mySession = new SessionFactory().getSession("mysqlx://localhost:3306/test?user=root&password=" + pass);
 //          mySession.sql("USE contact");
         //use contact database:
         mySession.createSchema("xcontact");
