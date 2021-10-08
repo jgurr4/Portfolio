@@ -90,6 +90,9 @@ public class HttpServerVerticle extends AbstractVerticle {
       } else if (path.endsWith(".pdf")) {
         response.putHeader("Content-Type", "application/pdf");
         isText = false;
+      } else if (path.endsWith(".gif")) {
+        response.putHeader("Content-Type", "image/gif");
+        isText = false;
       } else {
         response.setStatusCode(502);
         response.end("<html><body>Error filetype unknown: " + path + "</body></html>");

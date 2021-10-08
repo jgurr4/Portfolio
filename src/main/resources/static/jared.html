@@ -138,12 +138,40 @@ Successfully backed up local databases: srev"
         Couchbase</a> is a NoSQL database which uses json Documents to store data.
         It uses it's own language called N1QL (pronounced Nickel). I use it as an alternative to MySQL/MariaDB
         for projects that may benefit from it's powerful features and simplicity.</p>
-    <p id="dockerd" class="hideDesc"><a href="https://www.docker.com/" target="_blank"
-                                        title="Click to see official site.">
-        Docker</a> is a "Containerization" software which allows you to develop and
-        deploy apps inside totally controlled environments. All my apps run inside Docker containers so that
-        no matter what server my apps are running on, it will work the same no matter what base OS or hardware that
-        server uses.</p>
+    <pre id="dockerd" class="hideDesc"><code class="language-bash">#docker-compose.yml file used to run this page and the other projects on my server.
+version: '3'
+services:
+  db:
+    container_name: mariadb
+    image: mariadb/server
+    volumes:
+      - /home/jaredgurr/portfolio-extra/mysqldata:/var/lib/mysql
+      - /home/jaredgurr/Master/scripts/mysqlScripts:/mysqlScripts
+    environment:
+      - MYSQL_ROOT_PASSWORD=$pass
+    ports:
+      - "3306:3306"
+  web:
+    container_name: lawn
+    image: jaredsdev/nodejsapp
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+  java:
+    container_name: portfolio
+    image: jaredsdev/portfolio
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+  spring:
+    container_name: dissector
+    image: jaredsdev/med_dissector
+    ports:
+      - "8082:8082"
+    depends_on:
+      - db</code></pre>
     <p id="gitd" class="hideDesc"><a href="https://git-scm.com/" target="_blank" title="Click to see official site.">
         Git</a> is a minimalistic and lightweight but powerful version control software
         which makes it easy to develop projects/apps and explore ideas in separate "branches", and if some new feature
@@ -491,11 +519,7 @@ class IHashMapEntry&lt;K, V> {
 
     return rxListen.ignoreElement();
   }</code></pre>
-    <p id="vimd" class="hideDesc"><a href="https://www.vim.org/" target="_blank" title="Click to see official site.">
-        VIM</a>(Vi-Improved) is one of my all time favorite text editors. It is so powerful and has so many capabilities,
-        that any code or even simple text documents you write will be done in much less time than it takes in normal text
-        editors. Check out the webpage and you'll see more details explaining vim. All my code is typed with VIM.
-    </p>
+    <img id="vimd" class="hideDesc" src="images/vimExamples.gif">
 </div>
 
 <div id="qualifications" class="hideSection">
