@@ -6,6 +6,10 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://kit.fontawesome.com/6f406d946e.js" crossorigin="anonymous"></script>
     <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </head>
 <body>
 <span id="menu" class="noSelect">&#9728;</span>
@@ -120,12 +124,15 @@
 </div>
 
 <div>
-    <p id="bashd" class="techDesc"><a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)" target="_blank"
-                                      title="Click to see official site.">
-        Bourne-Again Shell</a> is a shell with powerful scripting capabilities. I use it for automating scripts for
-        MySQL/Couchbase queries, deploying Docker containers, Github push/pull updates, moving files remotely using SSH
-        and rsync,
-        and many more System Administrator duties.</p>
+    <pre id="bashd" class="techDesc"><code class="language-bash">#Backup Database script:
+ssh rancher@oip 'docker exec mariadb mysqldump --databases lawn med_dissector portfolio > server.sql'
+cd ~/Master/scripts/mysqlScripts/backup
+rsync rancher@oip:/home/rancher/server.sql ./server.sql
+docker exec mariadb mysqldump -u root -p$pass --databases srev > local.sql
+
+echo "Successfully backed up server databases: lawn med_dissector portfolio
+Successfully backed up local databases: srev"
+    </code></pre>
     <p id="couchbased" class="hideDesc"><a href="https://docs.couchbase.com/home/server.html" target="_blank"
                                            title="Click to see official site.">
         Couchbase</a> is a NoSQL database which uses json Documents to store data.
@@ -153,13 +160,261 @@
         IntelliJ IDEA</a> is my preferred Java IDE. I previously used Eclipse, but found
         that IntelliJ was more intuitive and required less configuration than Eclipse did. Thanks to
         IntelliJ Ultimate my productivity has definitely increased substantially.</p>
-    <p id="javad" class="hideDesc">I use <a href="https://en.wikipedia.org/wiki/Java_(programming_language)"
-                                            target="_blank" title="Click to see official site.">
-        Java</a> as the main backend language of all my web applications. This is
-        because Java as an Application language has much more power and features than something like JavaScript/Node.js.
-        This is the reason I devoted more time to learning and mastering Java than I did to JavaScript. Combined
-        with Vert.x for asynchronicity, Java is an ideal programming language for handling the backend code for all
-        my web applications.</p>
+    <pre id="javad" class="hideDesc"><code class="language-java">//Immutable HashMap data structure I made for use with Jerbil project:
+@Immutable
+public class IHashMap&lt;K, V> implements IMap&lt;K, V> {
+
+  static public final IHashMap empty = new IHashMap(new IHashMapEntry[0], 5, 0, 6, 2);
+  private final IHashMapEntry&lt;K, V>[] entries;
+  private final int bucketSize;
+  private final float threshold = 0.3f;
+  private final int entriesInUse;
+  private final int bucketCount;
+  private final int expansionFactor;
+
+  private IHashMap(IHashMapEntry&lt;K, V>[] entries, int bucketSize, int entriesInUse, int bucketCount, int expansionFactor) {
+
+    this.entries = entries;
+    this.bucketSize = bucketSize;
+    this.entriesInUse = entriesInUse;
+    this.bucketCount = bucketCount;
+    this.expansionFactor = expansionFactor;
+
+  }
+
+  public static &lt;K, V> IHashMap&lt;K, V> from(Object... objects) {
+
+    assert objects.length % 2 == 0;
+    final int entriesInUse = objects.length / 2;
+    final int bucketSize = 5;
+    final int entryCount = (int) (objects.length / .3f);
+    final int bucketCount = entryCount / bucketSize;
+    final IHashMapEntry&lt;K, V>[] entries = new IHashMapEntry[entryCount];
+    for (int i = 0; i < objects.length - 1; i += 2) {
+      final K key = (K) objects[i];
+      final V value = (V) objects[i + 1];
+      final int hashCode = Math.abs(key.hashCode());
+      final int bucketIndex = hashCode % bucketCount;
+      int c = 0;
+      int entryIndex = bucketIndex * bucketSize;
+      while (c < entries.length) {
+        if (entries[entryIndex] == null) {
+          entries[entryIndex] = IHashMapEntry.from(key, value);
+          break;
+        }
+        c++;
+        entryIndex++;
+        if (entryIndex >= entries.length) {
+          entryIndex = 0;
+        }
+      }
+    }
+    final IHashMap&lt;K, V> map = new IHashMap<>(entries, bucketSize, entriesInUse, bucketCount, 2);
+    return map;
+  }
+
+  @Override
+  public IHashMap&lt;K, V> putAll(Object... keyOrValue) {
+
+    int c = 0;
+    assert keyOrValue.length % 2 == 0;
+    IHashMapEntry&lt;K, V>[] newEntries = new IHashMapEntry[entries.length];
+    int newBucketCount = bucketCount;
+    int newEntriesInUse = keyOrValue.length / 2 + entriesInUse;
+    if (newEntriesInUse > (int) (entries.length * threshold)) {
+      final int entryCount = (int) (newEntriesInUse * 2 / threshold);
+      newBucketCount = entryCount / bucketSize;
+      newEntries = new IHashMapEntry[entryCount];
+      rehash(entries, newEntries, newBucketCount, bucketSize);
+    } else {
+      while (c < entries.length) {
+        newEntries[c] = entries[c];
+        c++;
+      }
+      c = 0;
+    }
+    for (int i = 0; i < keyOrValue.length - 1; i += 2) {
+      final K key = (K) keyOrValue[i];
+      final V value = (V) keyOrValue[i + 1];
+      final int hashCode = Math.abs(key.hashCode());
+      final int bucketIndex = hashCode % newBucketCount;
+      int entryIndex = bucketIndex * bucketSize;
+      while (c < newEntries.length) {
+        if (newEntries[entryIndex] == null) {
+          newEntries[entryIndex] = IHashMapEntry.from(key, value);
+          break;
+        }
+        c++;
+        entryIndex++;
+        if (entryIndex >= newEntries.length) {
+          entryIndex = 0;
+        }
+      }
+    }
+    final IHashMap&lt;K, V> map = new IHashMap<>(newEntries, bucketSize, newEntriesInUse, newBucketCount, 2);
+    return map;
+
+  }
+
+  @Override
+  public IHashMap&lt;K, V> put(K key, V value) {
+
+    int newBucketCount = bucketCount;
+    IHashMapEntry&lt;K, V>[] newEntries = new IHashMapEntry[entries.length];
+    int c = 0;
+    while (c < entries.length) {
+      newEntries[c] = entries[c];
+      c++;
+    }
+    c = 0;
+    final int hashCode = Math.abs(key.hashCode());
+    final int bucketIndex = hashCode % newBucketCount;
+    int entryIndex = bucketIndex * bucketSize;
+    int newEntriesInUse = entriesInUse;
+    while (c < newEntries.length) {
+      if (newEntries[entryIndex] == null) {
+        newEntries[entryIndex] = IHashMapEntry.from(key, value);
+        newEntriesInUse += 1;
+        break;
+      }
+      c++;
+      entryIndex++;
+      if (entryIndex >= newEntries.length) {
+        entryIndex = 0;
+      }
+    }
+    if (entriesInUse > newEntries.length * threshold) {
+      final int entryCount = getEntryCount();
+      newBucketCount = entryCount / bucketSize;
+      newEntries = new IHashMapEntry[entryCount];
+    }
+    final IHashMap&lt;K, V> map = new IHashMap<>(newEntries, bucketSize, newEntriesInUse, newBucketCount, 2);
+    return map;
+  }
+
+  @Override
+  public IMap&lt;K, V> remove(K key) {
+    return null;
+  }
+
+  private int getEntryCount() {
+    return (int) (entriesInUse * expansionFactor / threshold);
+  }
+
+  @Override
+  public int size() {
+    return entriesInUse;
+  }
+
+  @Override
+  public V get(K key) {
+
+    final int hashCode = Math.abs(key.hashCode());
+    final int bucketIndex = hashCode % bucketCount;
+    int entryIndex = bucketIndex * bucketSize;
+    int c = 0;
+    while (c < entries.length) {
+      if (entries[entryIndex] == null) {
+        return null;
+      } else if (entries[entryIndex].getKey() == key) {
+        return entries[entryIndex].getValue();
+      }
+      c++;
+      entryIndex++;
+    }
+    return null;
+  }
+
+  public IHashMap&lt;K, V> setBucketSize(int newBucketSize) {
+
+    final IHashMapEntry&lt;K, V>[] newEntries = new IHashMapEntry[entries.length];
+    rehash(entries, newEntries, bucketCount, newBucketSize);
+    return new IHashMap(newEntries, newBucketSize, entriesInUse, bucketCount, 2);
+
+  }
+
+  public IHashMap&lt;K, V> setBucketCount(int newBucketCount) {
+
+    final IHashMapEntry&lt;K, V>[] newEntries = new IHashMapEntry[newBucketCount * bucketSize];
+    rehash(entries, newEntries, newBucketCount, bucketSize);
+    return new IHashMap(newEntries, bucketSize, entriesInUse, newBucketCount, 2);
+  }
+
+  private void rehash(IHashMapEntry&lt;K, V>[] entries, IHashMapEntry&lt;K, V>[] newEntries, int newBucketCount, int newBucketSize) {
+
+    for (int i = 0; i < entries.length; i++) {
+      if (entries[i] != null) {
+        IHashMapEntry&lt;K, V> entry = entries[i];
+        final int newBucketIndex = Math.abs(entry.getKey().hashCode()) % newBucketCount * newBucketSize;
+        for (int k = newBucketIndex; k < newEntries.length; k++) {
+          if (k > newEntries.length) {
+            k = 0;
+          }
+          if (newEntries[k] == null) {
+            newEntries[k] = entry;
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public int getBucketCount() {
+    return bucketCount;
+  }
+
+  public int getBucketSize() {
+    return bucketSize;
+  }
+
+  public IHashMap&lt;K, V> setThreshold(double v) {
+
+    IHashMapEntry&lt;K, V>[] newEntries = entries;
+    int newBucketCount = bucketCount;
+    if (entriesInUse > entries.length * threshold) {
+      newEntries = new IHashMapEntry[entries.length];
+      newBucketCount = getEntryCount() / bucketSize;
+      rehash(entries, newEntries, newBucketCount, bucketSize);
+    }
+    return new IHashMap(newEntries, bucketSize, entriesInUse, newBucketCount, expansionFactor);
+  }
+
+}
+
+class IHashMapEntry&lt;K, V> {
+
+  private final K key;
+  private final V value;
+  public static IHashMapEntry empty = new IHashMapEntry(new IHashMapEntry[0], 10);
+
+  private IHashMapEntry(K key, V value) {
+
+    this.key = key;
+    this.value = value;
+  }
+
+  public static &lt;K, V> IHashMapEntry&lt;K, V> from(K key, V value) {
+
+    return new IHashMapEntry<>(key, value);
+  }
+
+  public K getKey() {
+
+    return key;
+  }
+
+  public V getValue() {
+
+    return value;
+  }
+
+  public IHashMapEntry&lt;K, V> setValue(V v) {
+
+    return new IHashMapEntry&lt;K, V>(key, v);
+  }
+
+}</code></pre>
     <p id="jsd" class="hideDesc"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"
                                     title="Click to see official site.">
         JavaScript</a> is the first programming language I learned, and it's what I
@@ -185,14 +440,57 @@
         Node.Js</a> is the program I learned to use before I knew Java/Vertx.
         It was an effective and easy way to connect MySQL to my websites. Because of this NPM and Node.Js are
         technologies I am very familiar with, and can use effectively.</p>
-    <p id="rxjavad" class="hideDesc"><a href="https://github.com/ReactiveX/RxJava" target="_blank"
-                                        title="Click to see official site.">
-        RXJava2</a> was the reactive Extensions package I learned for use with Java/Vertx.
-        Since Couchbase uses only Reactor Core I also learned that. I learned them so that I could make my Java
-        code reactive. So I am familiar with Reactive code concepts and syntax.</p>
-    <p id="vertxd" class="hideDesc"><a href="https://vertx.io/" target="_blank" title="Click to see official site.">
-        Vert.x</a> is the technology that makes all my Java Code Asynchronous and Reactive. The eventBus allows for
-        intuitive event-driven development.</p>
+    <pre id="rxjavad" class="hideDesc"><code class="language-java">//A MySQL microservice for inserting new users to database via html forms.
+//From dungeon-crawl project
+  private void handleInsert(Message&lt;String> message) {
+    LOGGER.debug("MysqlVerticle.handleInsert received message: " + message.body());
+    final MySQLPool client = context.get(ContextKey.mysqlConnection.name());
+    try {
+      final JsonObject json = new JsonObject(message.body());
+      final String username = json.getString("username");
+      final String password = json.getString("password").hashCode() + "";
+      final String email = json.getString("email");
+      client
+        .preparedQuery("INSERT INTO player VALUES (?,?,?,?)")
+        .execute(Tuple.of(0, username, password, email), ar -> {
+          if (ar.succeeded()) {
+            LOGGER.debug("Successfully inserted record for: " + username);
+            message.reply(null);
+          } else {
+            message.fail(500, "invalid insert statement " + ar.cause().getMessage());
+          }
+        });
+    } catch (Exception e){
+      message.fail(500, "invalid insert statement");
+    }
+  }</code></pre>
+    <pre id="vertxd" class="hideDesc"><code class="language-java">//MySQL microservice made to handle the routing for this portfolio webpage and the external projects.
+  @Override
+  public Completable rxStart() {
+    LOGGER.info("Http Verticle is starting. Make sure MariaDB is running.");
+    HttpServer server = vertx.createHttpServer();
+
+    Router router = Router.router(vertx);
+    router.route().handler(StaticHandler.create());
+    router.get("/").handler(this::redirect);
+    router.get("/lawnpage").handler(this::redirect);
+    router.get("/med_dissector").handler(this::redirect);
+    router.get("/static/*").handler(this::staticHandler);
+    router.route().handler(BodyHandler.create());
+    router.post("/api/contact").handler(this::busHandler);
+    final int port = 8080;
+    final Single&lt;HttpServer> rxListen = server
+            .requestHandler(router)
+            .rxListen(port)
+            .doOnSuccess(e -> {
+              LOGGER.info("HTTP server running on port " + port);
+            })
+            .doOnError(e -> {
+              LOGGER.error("Could not start a HTTP server", e.getMessage());
+            });
+
+    return rxListen.ignoreElement();
+  }</code></pre>
     <p id="vimd" class="hideDesc"><a href="https://www.vim.org/" target="_blank" title="Click to see official site.">
         VIM</a>(Vi-Improved) is one of my all time favorite text editors. It is so powerful and has so many capabilities,
         that any code or even simple text documents you write will be done in much less time than it takes in normal text

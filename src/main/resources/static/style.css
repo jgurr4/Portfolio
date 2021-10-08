@@ -23,7 +23,8 @@
     #codewar { margin-left: 20px; }
     #stack { margin-left: 20px; }
     .techImg { position: absolute; top: 850px; left: 270px; width: 300px; }
-    .techDesc { position: absolute; top: 1030px; left: 200px; width: 500px; font-size: 20px; }
+    .techDesc { position: absolute; top: 1030px; left: 200px; width: 500px; max-height: 200px; font-size: 13px; }
+    pre, code { max-height: 200px; }
     .section { position: absolute; top: 800px; left: 800px; }
     #about { font-size: 20px; }
     #buttons button { font-size: 18px; }
@@ -53,7 +54,7 @@
     #menu { float: left; margin-right: 10px; font-size: 100px; color: var(--text); }
     #content { float: left; margin-top: 20px;}
     #content button { margin: 10px; width: 300px; font-size: 27px; font-family: monospace; font-weight: bold; color: var(--text); background-color: var(--3); border-radius: 0px; border-color: initial; padding: 8px; }
-    #hello { background-color: var(--3); margin-right: 200px; border-radius: 50px; font-size: 20px; padding: 14px 14px 14px 45px; }
+    #hello { background-color: var(--3); margin-right: 200px; border-radius: 50px; font-size: 13px; padding: 14px 14px 14px 45px; }
     #profileImg { height: 300px; width: 300px; position: absolute; top: 150px; left: 700px; border-radius: 50%; }
     #top-section { position: absolute; top: 150px; left: 150px; }
     #top-section h1 { font-size: 45px; }
@@ -64,7 +65,8 @@
     #codewar { margin-left: 10px; }
     #stack { margin-left: 15px; }
     .techImg { position: absolute; top: 500px; left: 200px; width: 250px; }
-    .techDesc { position: absolute; top: 650px; left: 110px; width: 520px; font-size: 20px; }
+    .techDesc { position: absolute; top: 680px; left: 110px; width: 520px; max-height: 200px; font-size: 13px; }
+    pre, code { max-height: 200px; }
     .section { position: absolute; top: 450px; left: 700px; }
     #about { font-size: 21px; }
     #buttons button { font-size: 15px; }
@@ -112,6 +114,7 @@
     #portfolio { font-size: 14px; top: 430px; left: 450px; width: 5.5in; }
     .techImg { position: absolute; top: 450px; left: 100px; width: 2.2in; }
     .techDesc { position: absolute; top: 6in; left: .3in; width: 4in; }
+    pre, code { max-height: 200px; }
     .pagination a { color: black; float: left; padding: .08in .16in; text-decoration: none; transition: background-color .3s; }
     div.pagination { position: relative; top: .05in; left: 1.5in; }
     #js { width: 1.6in; height: 1.6in; top: 430px; left: 120px;}
@@ -148,7 +151,8 @@
     #portfolio { top: 300px; left: 300px; width: 300px; }
     #portfolio p, li { font-size: .14in; }
     .techImg { position: absolute; top: 380px; left: .3in; width: 2.0in; }
-    .techDesc { position: absolute; top: 5.1in; left: .1in; font-size: 14px; width: 2.5in; height: 1.5in; }
+    .techDesc { position: absolute; top: 5.1in; left: .1in; font-size: 10px; width: 2.5in; height: 1.5in; }
+    pre, code { max-height: 200px; }
     .pagination a { color: black; float: left; padding: .08in .16in; text-decoration: none; transition: background-color .3s; }
     div.pagination { position: relative; top: .05in; left: 1.5in; }
     #js { width: 130px; height: 140px; top: 360px; left: 60px;}

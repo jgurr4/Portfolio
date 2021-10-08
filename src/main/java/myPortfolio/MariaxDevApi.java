@@ -11,9 +11,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.mysql.cj.xdevapi.*;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 public class MariaxDevApi extends AbstractVerticle {
     private static final Logger LOGGER = LoggerFactory.getLogger(myPortfolio.MariadbVerticle.class);
@@ -34,7 +36,7 @@ public class MariaxDevApi extends AbstractVerticle {
         final String callback = json.getString("callback");
         final String phone = json.getString("phone");
         final String interview_date = json.getString("interview_date");
-
+        final Properties propConfig = new Properties();
     try {
       propConfig.load(Thread.currentThread().getContextClassLoader().getResourceAsStream("config.properties"));
     } catch (IOException e) {
