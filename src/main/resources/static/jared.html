@@ -49,20 +49,20 @@
         <p style="margin: 15px 0px 0px 0px;">Skilled with these:</p>
         <button onclick="switchImg(this.value)" class="techBtn" value="java">Java</button>
         <button onclick="switchImg(this.value)" class="techBtn" value="vertx">Vertx</button>
-        <button onclick="switchImg(this.value)" class="techBtn" value="rxjava">RXJava2</button>
         <button onclick="switchImg(this.value)" class="techBtn" value="docker">Docker</button>
         <button onclick="switchImg(this.value)" class="techBtn" value="bash">BASH</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="linux">Linux</button>
         <button onclick="switchImg(this.value)" class="techBtn" value="vim">VIM</button>
         <button onclick="switchImg(this.value)" class="techBtn" value="git">Git</button>
         <button onclick="switchImg(this.value)" class="techBtn" value="mysql">MySQL</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="spring">Spring</button>
         <p style="margin: 15px 0px 0px 0px;">Familiar with these:</p>
         <button onclick="switchImg(this.value)" class="techBtn" value="html">HTML/CSS</button>
         <button onclick="switchImg(this.value)" class="techBtn" value="js">JavaScript</button>
         <button onclick="switchImg(this.value)" class="techBtn" value="jquery">JQuery</button>
-        <button onclick="switchImg(this.value)" class="techBtn" value="linux">Linux</button>
+        <button onclick="switchImg(this.value)" class="techBtn" value="rxjava">RXJava</button>
         <button onclick="switchImg(this.value)" class="techBtn" value="node">Node.js</button>
         <button onclick="switchImg(this.value)" class="techBtn" value="couchbase">Couchbase</button>
-        <button onclick="switchImg(this.value)" class="techBtn" value="intel">Intellij</button>
     </div>
 
     <p>Click any button above to see it's description and external links on left side.</p>
@@ -88,8 +88,8 @@
     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" title="Click to see official site.">
         <img id="html" class="hideImg" src="images/HTML+CSS.png">
     </a>
-    <a href="https://www.jetbrains.com/idea/" target="_blank" title="Click to see official site.">
-        <img id="intel" class="hideImg" src="images/Intellij.jpg" height="165">
+    <a href="https://spring.io/projects/spring-framework" target="_blank" title="Click to see official site.">
+        <img id="spring" class="hideImg" src="images/spring.png" height="165">
     </a>
     <a href="https://en.wikipedia.org/wiki/Java_(programming_language)" target="_blank"
        title="Click to see official site.">
@@ -133,11 +133,32 @@ docker exec mariadb mysqldump -u root -p$pass --databases srev > local.sql
 echo "Successfully backed up server databases: lawn med_dissector portfolio
 Successfully backed up local databases: srev"
     </code></pre>
-    <p id="couchbased" class="hideDesc"><a href="https://docs.couchbase.com/home/server.html" target="_blank"
-                                           title="Click to see official site.">
-        Couchbase</a> is a NoSQL database which uses json Documents to store data.
-        It uses it's own language called N1QL (pronounced Nickel). I use it as an alternative to MySQL/MariaDB
-        for projects that may benefit from it's powerful features and simplicity.</p>
+    <pre id="couchbased" class="hideDesc"><code class="language-java">/* A simple microservice for inserting new user to
+Couchbase database. Taken from the Dungeon Crawl project. */
+private void handleInsert(Message&lt;String> message) {
+    LOGGER.debug("CouchbaseVerticle.handleInsert received message : " + message.body());
+    final ReactiveCluster connection = context.get(ContextKey.couchbaseConnection.name());
+    final JsonObject json = JsonObject.fromJson(message.body());
+    final String username = json.getString("username");
+    final String email = json.getString("email");
+    final String hashword = json.getString("password").hashCode() + "";
+    final JsonObject user = JsonObject.create();
+    user.put("name", username);
+    user.put("email", email);
+    user.put("hashword", hashword);
+    connection.bucket("depths")
+      .defaultCollection()
+      .insert("user::" + username, user)
+      .log()
+      .subscribe(result -> {
+          LOGGER.debug("Result of insertion: " + result);
+          message.reply(null);
+        },
+        err -> {
+          message.reply(err.getMessage());
+        });
+  }
+</code></pre>
     <pre id="dockerd" class="hideDesc"><code class="language-bash">#docker-compose.yml file used to run this page and the other projects on my server.
 version: '3'
 services:
@@ -177,17 +198,161 @@ services:
         which makes it easy to develop projects/apps and explore ideas in separate "branches", and if some new feature
         breaks my app, I can always rewind back to a previous state when it worked. It's exceptionally good for use
         in a team environment.</p>
-    <p id="htmld" class="hideDesc"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"
-                                      title="Click to see official site.">
-        HTML</a> and <a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank"
-                        title="Click to see official site.">CSS</a> are the two main languages I learned to build the
-        front-end of my web applications, I am not an expert with them like I am with the other Backend technologies,
-        but I know enough so that I could make my projects look good enough to post on the web.</p>
-    <p id="inteld" class="hideDesc"><a href="https://www.jetbrains.com/idea/" target="_blank"
-                                       title="Click to see official site.">
-        IntelliJ IDEA</a> is my preferred Java IDE. I previously used Eclipse, but found
-        that IntelliJ was more intuitive and required less configuration than Eclipse did. Thanks to
-        IntelliJ Ultimate my productivity has definitely increased substantially.</p>
+    <pre id="htmld" class="hideDesc"><code class="language-html">&lt;!--Simple html form snippet from Dungeon Crawl project. -->
+&lt;!--The css styles are also included. -->
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+  &lt;meta charset ="UTF-8">
+  &lt;title>Registration page&lt;/title>
+  &lt;style type="text/css">
+* { margin: 0; padding: 0; font-family: courier; }
+
+@media only screen and (max-width: 355px) {
+	html { width: 355px; overflow: scroll; }
+}
+
+html {
+  background: #56cc45;
+}
+
+form {
+  width: 299px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background: #ddd;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.4);
+}
+
+input {
+  margin: 10px;
+}
+
+p {
+  font-size: 18px;
+}
+
+input[type=text], input[type=password] {
+  width: 85%;
+  font-size: 20px;
+  padding: 5px;
+  margin-left: 15px;
+  position: relative;
+  height: 20px;
+  border-radius: 10px;
+  border: solid green 4px;
+}
+
+input:focus, button:focus {
+  outline: none;
+}
+
+input.log {
+  background: green;
+  color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  margin-top: 0px;
+  border-radius: 10px;
+  font-size: 30px;
+  position: relative;
+  left: 24%;
+}
+
+input.reg {
+  background: green;
+  color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  margin-top: 0px;
+  margin-left: 80px;
+  border-radius: 10px;
+  font-size: 30px;
+  position: relative;
+}
+
+button {
+  background: green;
+  color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 2px;
+  margin-left: 80px;
+  border-radius: 10px;
+  font-size: 20px;
+  position: relative;
+}
+
+#forgot {
+  margin-left: 55px;
+}
+
+a {
+  text-align: center;
+  text-decoration: none;
+  margin: 5px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+  &lt;/style>
+&lt;/head>
+&lt;body>
+  &lt;h1>Register&lt;/h1>
+  &lt;form method="post" action="/bus/createUser" spellcheck="false">
+        Username:
+        &lt;input type="text" name="username" required>&lt;/input>
+        &lt;pre>&lt;/pre>
+        Email address:
+        &lt;input type="text" name="email" required>&lt;/input>
+        &lt;pre>&lt;/pre>
+        Password:
+        &lt;input type="password" name="password" required>&lt;/input>
+        &lt;pre>&lt;/pre>
+        &lt;input type="submit" class="reg">&lt;/input>
+  &lt;/form>
+&lt;/body>
+&lt;/html>
+</code></pre>
+    <pre id="springd" class="hideDesc"><code class="language-java">/* A simple controller for api endpoints as part of a
+REST api. From the Medical Term Dissector app. */
+@RestController
+@RequestMapping(path = "/api/term")
+public class AffixController {
+
+  private final AffixService affixService;
+
+  @Autowired
+  public AffixController(AffixService affixService) {
+    this.affixService = affixService;
+  }
+
+  @GetMapping(path = "/dissect/{term}")
+  public AffixResult getDissectedTerm(@PathVariable("term") String term) {
+    return affixService.dissect(term);
+  }
+
+  @PostMapping(path = "/dissect")
+  public AffixResult getDissectedTermFromBody(@RequestBody Map term) {
+    return affixService.dissect(term.get("term").toString());
+  }
+
+  private class DissectForm {
+    public String term;
+  }
+}
+</code></pre>
     <pre id="javad" class="hideDesc"><code class="language-java">//Immutable HashMap data structure I made for use with Jerbil project:
 @Immutable
 public class IHashMap&lt;K, V> implements IMap&lt;K, V> {
@@ -443,31 +608,247 @@ class IHashMapEntry&lt;K, V> {
   }
 
 }</code></pre>
-    <p id="jsd" class="hideDesc"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"
-                                    title="Click to see official site.">
-        JavaScript</a> is the first programming language I learned, and it's what I
-        use to manipulate the HTML DOM for apps that require it. Also it's what I use to communicate front-end websites
-        to Java Backend programs.</p>
-    <p id="jqueryd" class="hideDesc"><a href="https://jquery.com/" target="_blank"
-                                        title="Click to see official site.">
-        JQuery</a> and AJAX are my preferred means of making interactive webpages. It makes submitting forms and
-        updating the DOM instantaneous.</p>
+    <pre id="jsd" class="hideDesc"><code class="language-javascript">/* Simple function I made for making post request,
+and for sending the response data to a method for handling
+and displaying results.*/
+function obtainJson() {
+    let inputTerm = document.getElementById("inputTerm").value
+    fetch('/api/term/dissect', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            term: inputTerm
+        })
+    }).then(res => {
+        return res.json()
+    }).then(data => {
+        showDissectedResults(data)
+    })
+}</code></pre>
+    <pre id="jqueryd" class="hideDesc"><code class="language-javascript">/* A simple jquery snippet which shows how I
+check if a user has logged in recently, if they have
+this will redirect them to the main page, otherwise
+it will make them login. Taken from my wilderness project. */
+&lt;script type="text/javascript" language="JavaScript">
+    $(document).ready(function () {
+        let decodedCookie = decodeURIComponent(document.cookie);
+        if (decodedCookie.search("username") > -1) {
+            $(window).attr('location', '/main.php');
+        }
+
+        $("#loginDriver").click(function (event) {
+            let uname = $("#username").val();
+            let pass = $("#passwordCheck").val();
+            $("#stage").load('/mysqlLogin.php', {
+                "uname": uname,
+                "pass": pass,
+            }, function () {
+                if ($("#loginResult").html() === 'success') {
+                    let curDate = new Date();
+                    curDate.setDate(curDate.getDate() + 1);
+                    let date = curDate.toUTCString();
+                    document.cookie = "username=" + uname + "; expires=" + date + "; path=/";
+                    $(window).attr('location','/main.php');
+                } else {
+                    $(".input").val('');
+                }
+            });
+        });
+    });
+&lt;/script>
+    </code></pre>
     <p id="linuxd" class="hideDesc">After I built my own PC, I decided to install both Windows and <a
             href="https://en.wikipedia.org/wiki/Linux" target="_blank" title="Click to see official site.">
         Linux</a> on it in a dual boot configuration. Within a short time, I found out I liked developing within
         Linux much more than I did within Windows, so now I use Linux for 100% of my programming. Right now my
         workstation OS is Pop!_OS, which is based on Ubuntu. Beyond that, I also run my servers in RancherOS and use
         Alpine within that.</p>
-    <p id="mysqld" class="hideDesc"><a href="https://mariadb.org/about/" target="_blank"
-                                       title="Click to see official site.">
-        MySQL/MariaDB</a> are RDBMS(Relational Database Management Systems) I learned as my primary method of storing
-        data
-        for my websites. This is one of my most studied languages and I consider it my specialty.</p>
-    <p id="noded" class="hideDesc"><a href="https://nodejs.org/en/about/" target="_blank"
-                                      title="Click to see official site.">
-        Node.Js</a> is the program I learned to use before I knew Java/Vertx.
-        It was an effective and easy way to connect MySQL to my websites. Because of this NPM and Node.Js are
-        technologies I am very familiar with, and can use effectively.</p>
+    <pre id="mysqld" class="hideDesc"><code class="language-sql"> --Simple script for creating the database for the wilderness project.
+DROP DATABASE IF EXISTS wilderness;
+CREATE DATABASE wilderness;
+USE wilderness;
+
+SOURCE /sqlScripts/backup.sql;
+
+CREATE TABLE `task` (
+   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+   `title` varchar(255) UNIQUE NOT NULL,
+   `tech` varchar(150) not null,
+   `survival` BOOLEAN,
+   `city` BOOLEAN,
+   `homestead` BOOLEAN,
+   `tOrder` int(10) unsigned DEFAULT NULL,
+   `tGroup` varchar(40) DEFAULT NULL,
+   `user_author` varchar(40) DEFAULT 'TheGuy',
+   `purpose` text DEFAULT NULL,
+   `instructions` text DEFAULT NULL,
+   `image` VARCHAR(255) DEFAULT '',
+   INDEX (`tGroup`),
+   PRIMARY KEY (`id`)
+) ENGINE InnoDB;
+
+CREATE TABLE `user` (
+   `id` int unsigned NOT NULL AUTO_INCREMENT,
+   `username` varchar(50) NOT NULL,
+   `name` varchar(50) not null,
+   `password` varchar(255) NOT NULL,
+   `email` varchar(50) NOT NULL,
+   `phone` varchar(15) DEFAULT NULL,
+   `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   `updated_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+   PRIMARY KEY (`id`),
+   UNIQUE KEY `email` (`email`),
+   UNIQUE KEY `username` (`username`)
+) ENGINE InnoDB;
+
+CREATE TABLE `supply` (
+   `id` int unsigned NOT NULL AUTO_INCREMENT,
+   `task_id` int unsigned,
+   `name` varchar(50) NOT NULL,
+   `base_material` varchar(50) NOT NULL,
+   `secondary_material` varchar(50) DEFAULT NULL,
+   `description` text,
+   `common` enum('Y','N') DEFAULT 'N',
+   `howToGet` text NOT NULL,
+   PRIMARY KEY (`id`)
+) ENGINE InnoDB;
+
+CREATE TABLE taskCompletion(
+   `user_id` int unsigned,
+   `task_id` int unsigned,
+   `timeSpent` time not null,
+   `dateCompleted` datetime not null default current_timestamp,
+   PRIMARY KEY (`user_id`, `task_id`)
+) ENGINE InnoDB;
+
+CREATE TABLE `source` (
+   `method_id` int(10) unsigned DEFAULT NULL,
+   `source1` text NOT NULL,
+   `source2` text,
+   `source3` text,
+   `source4` text,
+   `source5` text,
+   `extraInfo` text
+) ENGINE InnoDB;
+
+
+DELIMITER //
+CREATE PROCEDURE createNewUser(
+    IN username VARCHAR(50), IN name varchar(50), IN pass VARCHAR(255), IN email VARCHAR(50), IN phone VARCHAR(15))
+BEGIN
+    INSERT INTO user VALUES (0, username, name, pass, email, phone, default, default);
+END //
+
+CREATE PROCEDURE retrieveUser(IN uname VARCHAR(50), IN pass VARCHAR(255))
+BEGIN
+    SELECT * FROM user WHERE username = uname AND password = pass;
+END //
+
+CREATE PROCEDURE retrieveUserFromEmail(IN uname VARCHAR(50), IN user_email VARCHAR(50))
+BEGIN
+    SELECT * FROM user WHERE username = uname AND email = user_email;
+END //
+
+CREATE PROCEDURE updateUser(
+    IN uname VARCHAR(50), IN newUName VARCHAR(50), IN name varchar(50), IN pass VARCHAR(255), IN email VARCHAR(50), IN phone VARCHAR(15))
+BEGIN
+    SET @uid = (SELECT `id` FROM `user` WHERE username = uname);
+    REPLACE INTO user VALUES (@uid, newUName, name, pass, email, phone, default, default);
+END //
+
+CREATE PROCEDURE deleteUser(IN uname VARCHAR(50), IN pass VARCHAR(255))
+BEGIN
+    SET @uid = (SELECT id FROM user WHERE username = uname AND password = pass FOR UPDATE);
+    IF @uid = (SELECT id FROM user WHERE username = uname AND password = pass) THEN
+        DELETE FROM user WHERE username = uname AND password = pass;
+        DELETE FROM taskCompletion WHERE user_id = @uid;
+    ELSE SELECT 'no user found with that username/password' AS message;
+    END IF;
+END //
+
+CREATE PROCEDURE createNewTask(IN title VARCHAR(255), IN tech VARCHAR(150), IN orderNo INT, IN purpose TEXT, IN instruction TEXT)
+BEGIN
+    UPDATE task SET `tOrder` = `tOrder` + 1 WHERE `tOrder` >= orderNo;
+    INSERT INTO task VALUES (0, title, tech, 1, 1, 1, orderNo, 'TheGuy', purpose, instruction, null);
+END //
+
+CREATE PROCEDURE getNextTask(IN u1 VARCHAR(50))
+BEGIN
+    SELECT * FROM task WHERE id =
+        (SELECT task_id FROM taskCompletion WHERE user_id =
+            (SELECT id FROM user WHERE username = u1) AND dateCompleted =
+                (SELECT MAX(dateCompleted))) + 1;
+END //
+
+CREATE PROCEDURE getTasks(IN myOffset int, IN amount int)
+BEGIN
+    SELECT * FROM task LIMIT myOffset, amount;
+end //
+
+CREATE PROCEDURE addImage(IN taskTitle varchar(255), IN imageName varchar(255))
+BEGIN
+    UPDATE task SET image = imageName WHERE title = taskTitle;
+END //
+
+DELIMITER ;
+
+CREATE ROLE IF NOT EXISTS 'app', 'developer','administrator';
+GRANT ALL ON *.* TO 'administrator';
+GRANT INSERT, UPDATE, DELETE ON wilderness.* TO 'developer';
+GRANT EXECUTE ON wilderness.* TO 'app';
+CREATE USER IF NOT EXISTS 'someone'@'localhost' IDENTIFIED BY 'somepass';
+CREATE USER IF NOT EXISTS 'app'@'localhost' IDENTIFIED BY 'somepass';
+GRANT 'app' TO 'app'@'localhost';
+GRANT 'administrator' TO 'someone'@'localhost';
+FLUSH PRIVILEGES;
+
+LOAD DATA LOCAL INFILE './sqlScripts/insertTasks.csv' INTO TABLE task FIELDS TERMINATED BY ',' IGNORE 1 LINES;</code></pre>
+    <pre id="noded" class="hideDesc"><code class="language-javascript">/*I made this page to send customer data to MySQL
+database for the lawn app. */
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const port = 8081
+const mariadb = require('mariadb');
+const config = require('./config.js');
+
+const pool = mariadb.createPool({
+    host: config.myHost,  //name of my container from docker-compose.yml line 3.
+    user: config.myUser,
+    password: config.pass,
+    database: config.db
+})
+
+app.use(express.static('public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.post('/api/contact', async (req, res) => {
+    console.log('post request received at api/contact.')
+    let con;
+    try {
+        console.log(req.body);
+        con = await pool.getConnection();
+        const username = req.body.name;
+        const email = req.body.email;
+        const phone = req.body.phone;
+        const service = req.body.services;
+        const address = req.body.address;
+        const intervals = req.body.intervals;
+        const message = req.body.message;
+        await con.query('INSERT INTO contact VALUES (?, ?, ?, ?, ?, ?, ?, CURDATE())',
+            [username, email, phone, service, address, intervals, message]);
+        res.redirect('back');
+        console.log('1 Record inserted.')
+    } catch (err) {
+        throw err;
+    } finally {
+        if (con) return con.release();
+    }
+});
+</code></pre>
     <pre id="rxjavad" class="hideDesc"><code class="language-java">//A MySQL microservice for inserting new users to database via html forms.
 //From dungeon-crawl project
   private void handleInsert(Message&lt;String> message) {

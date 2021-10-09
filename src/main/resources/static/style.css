@@ -47,7 +47,7 @@
     #linux { top: 825px; }
     #vim { height: 200px; width: 200px; top: 840px; left: 330px; }
     #couchbase { top: 890px;}
-    #intel { height: 200px; width: 200px; top: 840px; left: 330px; }
+    #spring { height: 200px; width: 300px; top: 840px; left: 300px; }
 }
 
 @media only screen and (min-width: 1500px) {
@@ -94,7 +94,7 @@
     #vim { height: 180px; width: 180px; top: 480px; left: 250px; }
     #git { top: 520px; }
     #couchbase { top: 530px; left: 230px; }
-    #intel { height: 170px; width: 170px; top: 490px; left: 250px; }
+    #spring { height: 170px; width: 270px; top: 490px; left: 220px; }
     footer { position: absolute; top: 850px; right: 0px; }
 }
 
@@ -128,7 +128,7 @@
     #linux { top: 430px; }
     #vim { height: 1.6in; width: 1.8in; top: 430px; left: 120px; }
     #couchbase { height: 120px;}
-    #intel { height: 1.6in; width: 1.8in; top: 430px; left: 120px; }
+    #spring { height: 1.6in; width: 2.4in; top: 410px; left: 120px; }
     #mysql { top: 430px; }
     footer { position: absolute; top: 765px; right: 0px; }
 }
@@ -164,7 +164,7 @@
     #docker { width: 150px; height: 140px; top: 360px; left: 40px; }
     #linux { top: 365px; left: 30px; }
     #vim { top: 370px; left: 45px; width: 1.6in; height: 1.2in; }
-    #intel { top: 360px; left: 45px; width: 1.6in; height: 1.4in; }
+    #spring { top: 360px; left: 15px; width: 2.4in; height: 1.4in; }
     #mysql { top: 360px; left: 15px; }
     #rxjava { height: 1in;}
     footer { top: 720px; right: 0px; font-size: 12px; }
