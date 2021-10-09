@@ -124,7 +124,7 @@
 </div>
 
 <div>
-    <pre id="bashd" class="techDesc"><code class="language-bash">#Backup Database script:
+    <pre id="bashd" class="techDesc"><code class="language-bash">#Backup remote and local databases script:
 ssh rancher@oip 'docker exec mariadb mysqldump --databases lawn med_dissector portfolio > server.sql'
 cd ~/Master/scripts/mysqlScripts/backup
 rsync rancher@oip:/home/rancher/server.sql ./server.sql
@@ -193,11 +193,7 @@ services:
       - "8082:8082"
     depends_on:
       - db</code></pre>
-    <p id="gitd" class="hideDesc"><a href="https://git-scm.com/" target="_blank" title="Click to see official site.">
-        Git</a> is a minimalistic and lightweight but powerful version control software
-        which makes it easy to develop projects/apps and explore ideas in separate "branches", and if some new feature
-        breaks my app, I can always rewind back to a previous state when it worked. It's exceptionally good for use
-        in a team environment.</p>
+    <img id="gitd" class="hideDesc" src="images/gitExamples.gif">
     <pre id="htmld" class="hideDesc"><code class="language-html">&lt;!--Simple html form snippet from Dungeon Crawl project. -->
 &lt;!--The css styles are also included. -->
 &lt;!DOCTYPE html>
@@ -659,12 +655,7 @@ it will make them login. Taken from my wilderness project. */
     });
 &lt;/script>
     </code></pre>
-    <p id="linuxd" class="hideDesc">After I built my own PC, I decided to install both Windows and <a
-            href="https://en.wikipedia.org/wiki/Linux" target="_blank" title="Click to see official site.">
-        Linux</a> on it in a dual boot configuration. Within a short time, I found out I liked developing within
-        Linux much more than I did within Windows, so now I use Linux for 100% of my programming. Right now my
-        workstation OS is Pop!_OS, which is based on Ubuntu. Beyond that, I also run my servers in RancherOS and use
-        Alpine within that.</p>
+    <img id="linuxd" class="hideDesc" src="images/linuxExamples.gif">
     <pre id="mysqld" class="hideDesc"><code class="language-sql"> --Simple script for creating the database for the wilderness project.
 DROP DATABASE IF EXISTS wilderness;
 CREATE DATABASE wilderness;
