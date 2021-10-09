@@ -34,7 +34,7 @@ jobs:
       with:
         image: jaredsdev/portfolio
         tags: v1, latest
-        registry: registry-url.io
+        registry: https://index.docker.io/v1/
         dockerfile: Dockerfile.ci
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
