@@ -55,7 +55,12 @@ public class HttpServerVerticle extends AbstractVerticle {
   private void redirect(RoutingContext context) {
     final HttpServerResponse response = context.response();
     final HttpServerRequest request = context.request();
-    String target = "/static/jared.html";
+    String target = "";
+    if (request.host().contains("arizonapomeranians.com")) {
+      target = "/static/azpom/index.html";
+    } else if (request.host().contains("jaredgurr.com")) {
+      target = "/static/jared.html";
+    }
     if (request.path().equals("/lawnpage")) {
       target = "http://" + request.host().replaceFirst(":.*", "") + ":8081";
     } else if (request.path().equals("/med_dissector")) {
