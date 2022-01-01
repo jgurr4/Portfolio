@@ -86,6 +86,8 @@ public class HttpServerVerticle extends AbstractVerticle {
         response.putHeader("Content-Type", "text/html");
       } else if (path.endsWith(".css")) {
         response.putHeader("Content-Type", "text/css");
+      } else if (path.endsWith(".js")) {
+        response.putHeader("Content-Type", "text/javascript");
       } else if (path.endsWith(".png")) {
         response.putHeader("Content-Type", "image/png");
         isText = false;
