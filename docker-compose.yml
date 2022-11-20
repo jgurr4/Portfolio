@@ -2,14 +2,16 @@ version: '3'
 services:
   db:
     container_name: mariadb
-    image: mariadb/server
+    image: mariadb:10.9.3
+    command: '--default-authentication-plugin=mysql_native_password'
     volumes:
       - /home/jaredgurr/portfolio-extra/mysqldata:/var/lib/mysql
       - /home/jaredgurr/Master/scripts/mysqlScripts:/mysqlScripts
     environment:
-      - MYSQL_ROOT_PASSWORD=$pass
-    ports:
-      - "3306:3306"
+      MARIADB_ROOT_PASSWORD: ${pass}
+      MARIADB_DATABASE: azpom
+    #ports:
+      #- "3306:3306"
   web:
     container_name: lawn
     image: jaredsdev/nodejsapp
@@ -31,3 +33,18 @@ services:
       - "8082:8082"
     depends_on:
       - db
+  wiki:
+    image: requarks/wiki:2.5
+    ports:
+      - 8083:3000
+      - 443:3443
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_TYPE: mariadb
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASS: ${pass}
+      DB_NAME: azpom
+    container_name: wikijs

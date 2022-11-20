@@ -57,7 +57,8 @@ public class HttpServerVerticle extends AbstractVerticle {
     final HttpServerRequest request = context.request();
     String target = "";
     if (request.host().contains("arizonapomeranians.com")) {
-      target = "/static/azpom/index.html";
+//      target = "/static/azpom/index.html";
+	target = "http://localhost:8083";
     } else if (request.host().contains("jaredgurr.com")) {
       target = "/static/jared.html";
     }
